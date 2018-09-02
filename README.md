@@ -1,5 +1,9 @@
 # Whedon
 
+![docs/robot.png](docs/robot.png)
+
+> Hi friend! :wave:
+
 [![CircleCI](https://circleci.com/gh/openbases/whedon.svg?style=svg)](https://circleci.com/gh/openbases/whedon)
 
 This is an automated build for a Docker container to serve our favorite, our
@@ -18,6 +22,16 @@ paper
    paper.bib
 ```
 
+### Custom Logo
+If you want a custom logo, add it to the [paper](paper) directory named as follows:
+
+```
+paper
+    paper.md
+    paper.bib
+    logo.png
+```
+
 An example is provided here, in [paper](paper). You can read guidelines for the
 paper [here](https://joss.readthedocs.io/en/latest/submitting.html).
 
@@ -32,6 +46,8 @@ it)
 docker build -t openbases/whedon .
 ```
 
+
+
 ### Generate PDF
 
 ### Test and Generate PDF
@@ -39,7 +55,7 @@ docker build -t openbases/whedon .
 ### Interactive
 
 ```
-docker run -it -v $PWD/paper:/data --entrypoint bash openbases/whedon
+docker run --rm -it -v $PWD/paper:/data --entrypoint bash openbases/whedon
 ```
 
 The bound "paper" directory is now at "/data"
