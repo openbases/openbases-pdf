@@ -1,6 +1,6 @@
 # Whedon
 
-![docs/robot.png](docs/robot.png)
+![docs/robot.png](https://github.com/openbases/whedon-python/raw/master/docs/img/robot.png)
 
 > Hi friend! :wave:
 
@@ -23,6 +23,7 @@ paper
 ```
 
 ### Custom Logo
+
 If you want a custom logo, add it to the [paper](paper) directory named as follows:
 
 ```
@@ -38,29 +39,69 @@ paper [here](https://joss.readthedocs.io/en/latest/submitting.html).
 
 ## Usage
 
-### Optional: Build the Container locally
-Here is how to test interactively! First build the container (or just run to pull 
-it)
+We will also be providing entry points to run tests for a submission, but for
+now are just starting with PDF generation. To see full usage, run without
+arguments:
 
+```bash
+$ docker run --rm -v $PWD/paper:/data openbases/whedon
+Usage:
+
+         docker run <options> <container> <action> [options] ...
+
+         **All input files should be mounted as volume at /data in container
+         
+         Options:
+
+         pdf:
+
+             --md: pdf input markdown file (default paper.md)
+             --bib: custom bib file (default paper.bib)
+             --minimal: create a minimal pdf (no template, etc.)
+             --logo: add a 'logo.png' to the same directory as your paper
+             --name: customize the name of the resulting pdf (default paper.pdf)
+             --template: use a custom template (put in mounted /data)
+
+         pub:
+
+             --issue: Github issue at joss-reviews of associated review
+             --year: JOSS year for publication
+             --volume: JOSS volume for publication
+
+         Examples:
+
+              docker run -v /data:/data <container> pdf --minimal
 ```
-docker build -t openbases/whedon .
-```
-
-
 
 ### Generate PDF
 
-### Test and Generate PDF
+```bash
+docker run --rm -v $PWD/paper:/data openbases/whedon pdf
+```
+
 
 ### Interactive
 
-```
+```bash
 docker run --rm -it -v $PWD/paper:/data --entrypoint bash openbases/whedon
 ```
 
 The bound "paper" directory is now at "/data"
 
-```
+```bash
 root@7d4b53b102f9:/data# ls /data/
 img  paper.bib  paper.md
 ```
+
+## Development
+
+Build the container
+
+```
+docker build -t openbases/whedon .
+```
+
+# TODO:
+
+ - Have xelatex and pancdoc be separate commands (and give more user control to run / specify options)
+ - Create local docs in docs folder here, to render on Github pages, with the content of this README.

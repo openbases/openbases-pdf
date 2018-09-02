@@ -13,8 +13,6 @@ RUN apt update && \
        lmodern \
        pandoc \
        pandoc-citeproc \
-       python-setuptools \
-       python-pip \
        texlive-xetex \
        texlive \
        texlive-latex-extra \
@@ -23,6 +21,8 @@ RUN apt update && \
        wget && \
     wget -O /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-1-amd64.deb && \
     dpkg -i /tmp/pandoc.deb && \
+    wget https://bootstrap.pypa.io/get-pip.py && \
+    python get-pip.py && \
     git clone https://github.com/openjournals/whedon.git "${WHEDON_DIR}" && \
     mkdir -p /data /code  && \
     pip install --upgrade pip && \
