@@ -100,8 +100,3 @@ Build the container
 ```
 docker build -t openbases/whedon .
 ```
-
-# TODO:
-
- - Have xelatex and pancdoc be separate commands (and give more user control to run / specify options)
- - Create local docs in docs folder here, to render on Github pages, with the content of this README.
