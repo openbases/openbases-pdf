@@ -52,7 +52,6 @@ dockerenv: &dockerenv
         # If not set, define CONTAINER_NAME
         if [ ! -n "${CONTAINER_NAME:-}" ]; then
             CONTAINER_NAME="openbases/whedon"
-            DOCKER_TAG=
         fi
         echo "Container name is ${CONTAINER_NAME}"
         if [ ! -n "${DOCKERFILE_PATH:-}" ]; then
@@ -187,8 +186,6 @@ jobs:
             - docker-v1-{{ .Branch }}
           paths:
             - /tmp/cache/container.tar.gz
-      - restore_cache:
-          key: dependency-cache-repo2docker
       - checkout
       - setup_remote_docker
       - run: *dockerenv
@@ -199,6 +196,16 @@ jobs:
           paths:
             - cache/container.tar.gz
             - src
+
+  update_cache:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /tmp
+      - save_cache:
+         key: docker-v1-{{ .Branch }}
+         paths:
+            - /tmp/cache/container.tar.gz
 
   test:
     <<: *defaults
@@ -219,17 +226,6 @@ jobs:
             - cache/container.tar.gz
             - src
             - paper
-
-
-  update_cache:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: /tmp
-      - save_cache:
-         key: docker-v1-{{ .Branch }}
-         paths:
-            - /tmp/cache/container.tar.gz
 
   deploy:
     <<: *defaults
@@ -338,10 +334,20 @@ workflows:
             tags:
               only: /.*/
 
+      - update_cache:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /docs?/.*/
+            tags:
+              only: /.*/
+
       # Test the whedon paper
       - test:
           requires:
             - build
+            - update_cache
           filters:
             tags:
               only: /.*/
@@ -350,6 +356,7 @@ workflows:
       - deploy:
           requires:
             - build
+            - update_cache
             - test
           filters:
             branches:
@@ -362,22 +369,11 @@ workflows:
       - manifest:
           requires:
             - build
+            - update_cache
             - test
             - deploy
           filters:
             branches:
               only: master
-            tags:
-              only: /.*/
-
-      - update_cache:
-          requires:
-            - build
-            - test
-            - deploy
-            - manifest
-          filters:
-            branches:
-              ignore: /docs?/.*/
             tags:
               only: /.*/
