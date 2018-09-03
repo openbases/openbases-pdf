@@ -143,6 +143,7 @@ whedon: &whedon
     name: use whedon docker container to generate pdf
     command: |
         source ${BASH_ENV}
+        cd /tmp/src
         echo "1. Starting Whedon Docker bot!"
         echo "docker run --name whedon  --entrypoint bash -dt ${CONTAINER_NAME}:${DOCKER_TAG}"
         docker run --name whedon  --entrypoint bash -dt "${CONTAINER_NAME}:${DOCKER_TAG}"
