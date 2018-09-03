@@ -155,7 +155,7 @@ whedon: &whedon
         echo "4. Obtaining finished paper.pdf"
         mkdir -p /tmp/paper
         echo "docker cp whedon:/data/ /tmp/paper"
-        docker cp whedon:/data/ /tmp/paper
+        docker cp whedon:/data/ /tmp/paper/.
         echo "5. Creating archive."
         echo "tar czf paper.tar.gz /tmp/paper"
         tar czf paper.tar.gz /tmp/paper
