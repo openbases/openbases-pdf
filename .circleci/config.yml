@@ -248,20 +248,20 @@ jobs:
                     git checkout gh-pages || git checkout --orphan gh-pages
                     # Save all previous tags, so we don't pull and re-generate
                     mkdir -p ../out-old
-                    for ext in $("json", "tar.gz", "pdf")
+                    for ext in json tar.gz pdf
                         do
-                            if ls *.${ext} 1> /dev/null 2>&1; then
-                                cp *.${ext} ../out-old/
-                            fi
+                        if /bin/bash -c "ls *.${ext}" 1> /dev/null 2>&1; then
+                                /bin/bash -c "cp *.${ext} ../out-old/" 
+                        fi
                     done                    
                     git rm -rf .
                     # ensure that github pages are ignored
                     mkdir -p .circleci && cp -a ../.circleci/. .circleci/.
                     # Copy back previous files
-                    for ext in $("json", "tar.gz", "pdf")
+                    for ext in json tar.gz pdf
                         do
-                           if ls ../out-old/*.${ext} 1> /dev/null 2>&1; then
-                               cp ../out-old/*.${ext} ${PWD}
+                           if /bin/bash -c "ls ../out-old/*.${ext}" 1> /dev/null 2>&1; then
+                               /bin/bash -c "cp ../out-old/*.${ext} ${PWD}"
                         fi
                     done
                     cp .circleci/template.html template.html
