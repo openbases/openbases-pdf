@@ -191,11 +191,13 @@ jobs:
       - run: *dockerenv
       - run: *dockerbuild
       - run: *dockersave
+      - run: *whedon
       - persist_to_workspace:
           root: /tmp
           paths:
             - cache/container.tar.gz
             - src
+            - paper
 
   update_cache:
     <<: *defaults
@@ -206,26 +208,6 @@ jobs:
          key: docker-v1-{{ .Branch }}
          paths:
             - /tmp/cache/container.tar.gz
-
-  test:
-    <<: *defaults
-    steps:
-      - restore_cache:
-          keys:
-            - docker-v1-{{ .Branch }}
-          paths:
-            - /tmp/cache/container.tar.gz
-      - checkout
-      - setup_remote_docker
-      - run: *dockerenv
-      - run: *dockerload
-      - run: *whedon
-      - persist_to_workspace:
-          root: /tmp
-          paths:
-            - cache/container.tar.gz
-            - src
-            - paper
 
   deploy:
     <<: *defaults
@@ -325,12 +307,22 @@ jobs:
 
 workflows:
   version: 2
-  build_test_deploy:
+  build_deploy:
     jobs:
       - build:
           filters:
             branches:
               ignore: gh-pages
+            tags:
+              only: /.*/
+
+      # Upload the container to Docker Hub
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
             tags:
               only: /.*/
 
@@ -343,34 +335,10 @@ workflows:
             tags:
               only: /.*/
 
-      # Test the whedon paper
-      - test:
-          requires:
-            - build
-            - update_cache
-          filters:
-            tags:
-              only: /.*/
-
-      # Upload the container to Docker Hub
-      - deploy:
-          requires:
-            - build
-            - update_cache
-            - test
-          filters:
-            branches:
-              only: master
-            tags:
-              only: /.*/
-
-
       # Push the manifest back to Github pages
       - manifest:
           requires:
             - build
-            - update_cache
-            - test
             - deploy
           filters:
             branches:
