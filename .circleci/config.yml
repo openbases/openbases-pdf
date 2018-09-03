@@ -51,25 +51,17 @@ dockerenv: &dockerenv
         fi
         # If not set, define CONTAINER_NAME
         if [ ! -n "${CONTAINER_NAME:-}" ]; then
-            CONTAINER_NAME="${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
+            CONTAINER_NAME="openbases/whedon"
+            DOCKER_TAG=
         fi
         echo "Container name is ${CONTAINER_NAME}"
         if [ ! -n "${DOCKERFILE_PATH:-}" ]; then
             DOCKERFILE_PATH="Dockerfile";
         fi
         echo "Dockerfile will be looked for at ${DOCKERFILE_PATH}"
-        # If not set, define REPO_NAME
-        if [ ! -n "${REPO_NAME:-}" ]; then
-            LOCAL_REPO="${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
-            REPO_NAME=/tmp/src
-            echo "Repository name (REPO_NAME) is not defined, will build ${LOCAL_REPO} in ${REPO_NAME}"
-        else
-            echo "Repository name found defined for build: ${REPO_NAME}"
-        fi
         # export to bash environment
         echo "export CONTAINER_NAME=${CONTAINER_NAME}" >> ${BASH_ENV}
         echo "export DOCKER_TAG=${DOCKER_TAG}" >> ${BASH_ENV}
-        echo "export REPO_NAME=${REPO_NAME}" >> ${BASH_ENV}
         echo "export DOCKERFILE_PATH=${DOCKERFILE_PATH}" >> ${BASH_ENV}
         cat ${BASH_ENV}
 
@@ -148,6 +140,30 @@ dockerbuild: &dockerbuild
         docker images
 
 
+whedon: &whedon
+    name: use whedon docker container to generate pdf
+    command: |
+        source ${BASH_ENV}
+        echo "1. Starting Whedon Docker bot!"
+        echo "docker run --name whedon  --entrypoint bash -dt ${CONTAINER_NAME}:${DOCKER_TAG}"
+        docker run --name whedon  --entrypoint bash -dt "${CONTAINER_NAME}:${DOCKER_TAG}"
+        echo "2. Copying paper stuffs for Whedon..."
+        echo "docker cp ./paper/. whedon:/data/"
+        docker cp ./paper/. whedon:/data/
+        echo "3. Go Whedon Go, generate the PDF!"
+        echo "docker exec whedon /bin/bash /code/entrypoint.sh pdf"
+        docker exec whedon /bin/bash /code/entrypoint.sh pdf
+        echo "4. Obtaining finished paper.pdf"
+        mkdir -p /tmp/paper
+        echo "docker cp whedon:/data/ /tmp/paper"
+        docker cp whedon:/data/ /tmp/paper
+        echo "5. Creating archive."
+        echo "tar czf paper.tar.gz /tmp/paper"
+        tar czf paper.tar.gz /tmp/paper
+        mv paper.tar.gz /tmp/paper
+        docker stop whedon
+
+
 ################################################################################
 # Jobs
 ################################################################################
@@ -183,6 +199,27 @@ jobs:
           paths:
             - cache/container.tar.gz
             - src
+
+  test:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          keys:
+            - docker-v1-{{ .Branch }}
+          paths:
+            - /tmp/cache/container.tar.gz
+      - checkout
+      - setup_remote_docker
+      - run: *dockerenv
+      - run: *dockerload
+      - run: *whedon
+      - persist_to_workspace:
+          root: /tmp
+          paths:
+            - cache/container.tar.gz
+            - src
+            - paper
+
 
   update_cache:
     <<: *defaults
@@ -233,21 +270,30 @@ jobs:
                     git checkout gh-pages || git checkout --orphan gh-pages
                     # Save all previous tags, so we don't pull and re-generate
                     mkdir -p ../out-old
-                    if ls *.json 1> /dev/null 2>&1; then
-                        cp *.json ../out-old/
-                    fi
+                    for ext in $("json", "tar.gz", "pdf")
+                        do
+                            if ls *.${ext} 1> /dev/null 2>&1; then
+                                cp *.${ext} ../out-old/
+                            fi
+                    done                    
                     git rm -rf .
                     # ensure that github pages are ignored
                     mkdir -p .circleci && cp -a ../.circleci/. .circleci/.
                     # Copy back previous files
-                    if ls ../out-old/*.json 1> /dev/null 2>&1; then
-                        cp ../out-old/*.json ${PWD}
-                    fi
+                    for ext in $("json", "tar.gz", "pdf")
+                        do
+                           if ls ../out-old/*.${ext} 1> /dev/null 2>&1; then
+                               cp ../out-old/*.${ext} ${PWD}
+                        fi
+                    done
                     cp .circleci/template.html template.html
                     # replace container name in index.html
                     envsubst < template.html > index.html
                     echo "2. Generating manifest for latest..."
                     docker inspect ${CONTAINER_NAME}:${DOCKER_TAG} > manifest-latest.json
+                    echo "3. Generating paper and archive for latest..."
+                    cp /tmp/paper/paper.pdf paper-latest.pdf
+                    cp /tmp/paper/paper.tar.gz paper-latest.tar.gz
                     # We will keep a list of tags
                     rm -rf tags.json && touch tags.json
                     for tag in $(curl -L -s "https://registry.hub.docker.com/v2/repositories/${CONTAINER_NAME}/tags?page_size=1024" | jq --raw-output '."results"[]["name"]')
@@ -283,7 +329,7 @@ jobs:
 
 workflows:
   version: 2
-  build_deploy:
+  build_test_deploy:
     jobs:
       - build:
           filters:
@@ -292,14 +338,11 @@ workflows:
             tags:
               only: /.*/
 
-      - update_cache:
+      # Test the whedon paper
+      - test:
           requires:
             - build
-            - deploy
-            - manifest
           filters:
-            branches:
-              ignore: /docs?/.*/
             tags:
               only: /.*/
 
@@ -307,19 +350,34 @@ workflows:
       - deploy:
           requires:
             - build
+            - test
           filters:
             branches:
               only: master
             tags:
               only: /.*/
 
+
       # Push the manifest back to Github pages
       - manifest:
           requires:
             - build
+            - test
             - deploy
           filters:
             branches:
               only: master
+            tags:
+              only: /.*/
+
+      - update_cache:
+          requires:
+            - build
+            - test
+            - deploy
+            - manifest
+          filters:
+            branches:
+              ignore: /docs?/.*/
             tags:
               only: /.*/
