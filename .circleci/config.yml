@@ -6,8 +6,8 @@
 
 # In addition to the variables defined above, you should set the GITHUB_EMAIL
 # and GITHUB_USER to be the email associated with the repo 
-# WHEDON_ARGS for any special commnands to be passed to the openbases/whedon 
-# entrypoint
+# WHEDON_ARGS for any special commnands to be passed to the 
+# openbases/builder-whedon entrypoint
 # (for deploy to Github pages). if not set, this step won't be done 
 
 
@@ -53,7 +53,7 @@ dockerenv: &dockerenv
         fi
         # If not set, define CONTAINER_NAME
         if [ ! -n "${CONTAINER_NAME:-}" ]; then
-            CONTAINER_NAME="openbases/whedon"
+            CONTAINER_NAME="openbases/builder-whedon"
         fi
         echo "Container name is ${CONTAINER_NAME}"
         if [ ! -n "${DOCKERFILE_PATH:-}" ]; then

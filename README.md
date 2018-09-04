@@ -39,7 +39,8 @@ paper [here](https://joss.readthedocs.io/en/latest/submitting.html).
 
 You can use this container to build and preview a pdf for your submission to
 an open journals journal. The container is ready for you to go, pre-built on
-Docker Hub as [openbases/builder-whedon](https://hub.docker.com/r/openbases/whedon/) and youcan even look at [tags, manifests, pdfs, and changes over time](https://openbases.github.io/builder-whedon/) for this container. 
+Docker Hub as [openbases/builder-whedon](https://hub.docker.com/r/openbases/builder-whedon/) 
+and you can even look at [tags, manifests, pdfs, and changes over time](https://openbases.github.io/builder-whedon/) for this container. 
 
 We will also be providing entry points to run tests for a submission, but for
 now are just starting with PDF generation. To see full usage, run without
