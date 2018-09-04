@@ -280,8 +280,13 @@ jobs:
                     echo "2. Generating manifest for latest..."
                     docker inspect ${CONTAINER_NAME}:${DOCKER_TAG} > manifest-latest.json
                     echo "3. Generating paper and archive for latest..."
+
+                    # Need to keep latest also as tag
                     cp /tmp/paper/paper.pdf paper-latest.pdf
                     cp /tmp/paper/paper.tar.gz paper-latest.tar.gz
+                    cp /tmp/paper/paper.pdf "paper-${DOCKER_TAG}.pdf"
+                    cp /tmp/paper/paper.tar.gz paper-latest.tar.gz
+
                     # We will keep a list of tags
                     rm -rf tags.json && touch tags.json
                     for tag in $(curl -L -s "https://registry.hub.docker.com/v2/repositories/${CONTAINER_NAME}/tags?page_size=1024" | jq --raw-output '."results"[]["name"]')
