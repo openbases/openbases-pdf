@@ -4,7 +4,7 @@
 
 > Hi friend! :wave:
 
-[![CircleCI](https://circleci.com/gh/openbases/whedon.svg?style=svg)](https://circleci.com/gh/openbases/whedon)
+[![CircleCI](https://circleci.com/gh/openbases/builder-whedon.svg?style=svg)](https://circleci.com/gh/openbases/builder-whedon)
 
 This is an automated build for a Docker container to serve our favorite, our
 friendly robot, the fantastic [whedon](https://www.github.com/openjournals/whedon),
