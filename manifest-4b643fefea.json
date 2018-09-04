@@ -4,7 +4,9 @@
         "RepoTags": [
             "openbases/whedon:4b643fefea"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "openbases/whedon@sha256:297363b37bb8dd9f2f51c734e225e9cbbe44a849f154eac3bc6565ba3f2a01d1"
+        ],
         "Parent": "",
         "Comment": "",
         "Created": "2018-09-04T02:24:44.305686477Z",

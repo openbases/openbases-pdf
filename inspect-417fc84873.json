@@ -1,6 +1,6 @@
 [
   {
-    "Image": "openbases/whedon:4b643fefea",
+    "Image": "openbases/whedon:417fc84873",
     "AnalyzeType": "Apt",
     "Analysis": [
       {
@@ -1876,7 +1876,7 @@
     ]
   },
   {
-    "Image": "openbases/whedon:4b643fefea",
+    "Image": "openbases/whedon:417fc84873",
     "AnalyzeType": "File",
     "Analysis": [
       {
@@ -2229,15 +2229,15 @@
       },
       {
         "Name": "/code",
-        "Size": 787088
+        "Size": 781104
       },
       {
         "Name": "/code/.circleci",
-        "Size": 37183
+        "Size": 36930
       },
       {
         "Name": "/code/.circleci/config.yml",
-        "Size": 12559
+        "Size": 12306
       },
       {
         "Name": "/code/.circleci/template.html",
@@ -2245,7 +2245,7 @@
       },
       {
         "Name": "/code/.git",
-        "Size": 550480
+        "Size": 545100
       },
       {
         "Name": "/code/.git/FETCH_HEAD",
@@ -2361,7 +2361,7 @@
       },
       {
         "Name": "/code/.git/objects",
-        "Size": 531728
+        "Size": 526348
       },
       {
         "Name": "/code/.git/objects/info",
@@ -2369,15 +2369,15 @@
       },
       {
         "Name": "/code/.git/objects/pack",
-        "Size": 531728
+        "Size": 526348
       },
       {
-        "Name": "/code/.git/objects/pack/pack-badd015f7397630676ad1e8da5041311dbe7817a.idx",
-        "Size": 3732
+        "Name": "/code/.git/objects/pack/pack-c278a9238caded8347a9cce13cb21a7ce3764f41.idx",
+        "Size": 3284
       },
       {
-        "Name": "/code/.git/objects/pack/pack-badd015f7397630676ad1e8da5041311dbe7817a.pack",
-        "Size": 527996
+        "Name": "/code/.git/objects/pack/pack-c278a9238caded8347a9cce13cb21a7ce3764f41.pack",
+        "Size": 523064
       },
       {
         "Name": "/code/.git/packed-refs",
@@ -2417,7 +2417,7 @@
       },
       {
         "Name": "/code/README.md",
-        "Size": 11455
+        "Size": 11104
       },
       {
         "Name": "/code/entrypoint.sh",
@@ -6373,7 +6373,7 @@
       },
       {
         "Name": "/root",
-        "Size": 3754459
+        "Size": 3552438
       },
       {
         "Name": "/root/.bashrc",
@@ -6381,19 +6381,19 @@
       },
       {
         "Name": "/root/.cache",
-        "Size": 3750997
+        "Size": 3548976
       },
       {
         "Name": "/root/.cache/pip",
-        "Size": 3750997
+        "Size": 3548976
       },
       {
         "Name": "/root/.cache/pip/http",
-        "Size": 3135123
+        "Size": 2932625
       },
       {
         "Name": "/root/.cache/pip/http/0",
-        "Size": 1456186
+        "Size": 653111
       },
       {
         "Name": "/root/.cache/pip/http/0/4",
@@ -6416,68 +6416,72 @@
         "Size": 83292
       },
       {
-        "Name": "/root/.cache/pip/http/0/9",
-        "Size": 803072
-      },
-      {
-        "Name": "/root/.cache/pip/http/0/9/9",
-        "Size": 803072
-      },
-      {
-        "Name": "/root/.cache/pip/http/0/9/9/2",
-        "Size": 803072
-      },
-      {
-        "Name": "/root/.cache/pip/http/0/9/9/2/9",
-        "Size": 803072
-      },
-      {
-        "Name": "/root/.cache/pip/http/0/9/9/2/9/099293f36cf879c1d236e768020fc5000a5f19e4b626b435e4cc2dab",
-        "Size": 803072
-      },
-      {
         "Name": "/root/.cache/pip/http/0/d",
-        "Size": 569822
+        "Size": 569819
       },
       {
         "Name": "/root/.cache/pip/http/0/d/c",
-        "Size": 569822
+        "Size": 569819
       },
       {
         "Name": "/root/.cache/pip/http/0/d/c/e",
-        "Size": 569822
+        "Size": 569819
       },
       {
         "Name": "/root/.cache/pip/http/0/d/c/e/7",
-        "Size": 569822
+        "Size": 569819
       },
       {
         "Name": "/root/.cache/pip/http/0/d/c/e/7/0dce7bd2bec2d9cd65f5b2c806ae77d1be0d60445a9a1335c30673ed",
-        "Size": 569822
+        "Size": 569819
+      },
+      {
+        "Name": "/root/.cache/pip/http/1",
+        "Size": 600669
+      },
+      {
+        "Name": "/root/.cache/pip/http/1/f",
+        "Size": 600669
+      },
+      {
+        "Name": "/root/.cache/pip/http/1/f/3",
+        "Size": 600669
+      },
+      {
+        "Name": "/root/.cache/pip/http/1/f/3/0",
+        "Size": 600669
+      },
+      {
+        "Name": "/root/.cache/pip/http/1/f/3/0/3",
+        "Size": 600669
+      },
+      {
+        "Name": "/root/.cache/pip/http/1/f/3/0/3/1f303af52c8fd5081e160fa3ab4007d08b55974b82393b1591f79b63",
+        "Size": 600669
       },
       {
         "Name": "/root/.cache/pip/http/3",
-        "Size": 21871
+        "Size": 21869
       },
       {
         "Name": "/root/.cache/pip/http/3/b",
-        "Size": 21871
+        "Size": 21869
       },
       {
         "Name": "/root/.cache/pip/http/3/b/0",
-        "Size": 21871
+        "Size": 21869
       },
       {
         "Name": "/root/.cache/pip/http/3/b/0/7",
-        "Size": 21871
+        "Size": 21869
       },
       {
         "Name": "/root/.cache/pip/http/3/b/0/7/9",
-        "Size": 21871
+        "Size": 21869
       },
       {
         "Name": "/root/.cache/pip/http/3/b/0/7/9/3b07911dec405a5cd479e807716d540b7e888ea1c89d40ad1d721e84",
-        "Size": 21871
+        "Size": 21869
       },
       {
         "Name": "/root/.cache/pip/http/4",
@@ -6505,51 +6509,51 @@
       },
       {
         "Name": "/root/.cache/pip/http/9",
-        "Size": 1308650
+        "Size": 1308653
       },
       {
         "Name": "/root/.cache/pip/http/9/3",
-        "Size": 1308650
+        "Size": 1308653
       },
       {
         "Name": "/root/.cache/pip/http/9/3/4",
-        "Size": 1308650
+        "Size": 1308653
       },
       {
         "Name": "/root/.cache/pip/http/9/3/4/0",
-        "Size": 1308650
+        "Size": 1308653
       },
       {
         "Name": "/root/.cache/pip/http/9/3/4/0/9",
-        "Size": 1308650
+        "Size": 1308653
       },
       {
         "Name": "/root/.cache/pip/http/9/3/4/0/9/93409091c89bba223e1f5ad63ffeb397278496badca7f7b4a809caa7",
-        "Size": 1308650
+        "Size": 1308653
       },
       {
         "Name": "/root/.cache/pip/http/a",
-        "Size": 282323
+        "Size": 282322
       },
       {
         "Name": "/root/.cache/pip/http/a/1",
-        "Size": 10807
+        "Size": 10806
       },
       {
         "Name": "/root/.cache/pip/http/a/1/9",
-        "Size": 10807
+        "Size": 10806
       },
       {
         "Name": "/root/.cache/pip/http/a/1/9/5",
-        "Size": 10807
+        "Size": 10806
       },
       {
         "Name": "/root/.cache/pip/http/a/1/9/5/3",
-        "Size": 10807
+        "Size": 10806
       },
       {
         "Name": "/root/.cache/pip/http/a/1/9/5/3/a19537d3cf37c122db841d6fe4cd322bc10d1a558bb00d146b85cb9a",
-        "Size": 10807
+        "Size": 10806
       },
       {
         "Name": "/root/.cache/pip/http/a/2",
@@ -6573,27 +6577,27 @@
       },
       {
         "Name": "/root/.cache/pip/http/b",
-        "Size": 8216
+        "Size": 8215
       },
       {
         "Name": "/root/.cache/pip/http/b/8",
-        "Size": 8216
+        "Size": 8215
       },
       {
         "Name": "/root/.cache/pip/http/b/8/6",
-        "Size": 8216
+        "Size": 8215
       },
       {
         "Name": "/root/.cache/pip/http/b/8/6/2",
-        "Size": 8216
+        "Size": 8215
       },
       {
         "Name": "/root/.cache/pip/http/b/8/6/2/6",
-        "Size": 8216
+        "Size": 8215
       },
       {
         "Name": "/root/.cache/pip/http/b/8/6/2/6/b862637a242a4033f1ba3be874e038f3a95ab29277da4c878f7c162d",
-        "Size": 8216
+        "Size": 8215
       },
       {
         "Name": "/root/.cache/pip/http/c",
@@ -6621,51 +6625,51 @@
       },
       {
         "Name": "/root/.cache/pip/http/d",
-        "Size": 1325
+        "Size": 1236
       },
       {
         "Name": "/root/.cache/pip/http/d/8",
-        "Size": 1325
+        "Size": 1236
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b",
-        "Size": 1325
+        "Size": 1236
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0",
-        "Size": 1325
+        "Size": 1236
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0/b",
-        "Size": 1325
+        "Size": 1236
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0/b/d8b0b8945179eae5bb9abb9826e25b97eab0bd8f1802e8b4aec09387",
-        "Size": 1325
+        "Size": 1236
       },
       {
         "Name": "/root/.cache/pip/http/e",
-        "Size": 42464
+        "Size": 42462
       },
       {
         "Name": "/root/.cache/pip/http/e/2",
-        "Size": 42464
+        "Size": 42462
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f",
-        "Size": 42464
+        "Size": 42462
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0",
-        "Size": 42464
+        "Size": 42462
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0/8",
-        "Size": 42464
+        "Size": 42462
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0/8/e2f0834a186adb91203d196c43046032d4765c360aff1cd98806a975",
-        "Size": 42464
+        "Size": 42462
       },
       {
         "Name": "/root/.cache/pip/selfcheck.json",
@@ -6673,7 +6677,27 @@
       },
       {
         "Name": "/root/.cache/pip/wheels",
-        "Size": 615806
+        "Size": 616283
+      },
+      {
+        "Name": "/root/.cache/pip/wheels/85",
+        "Size": 573299
+      },
+      {
+        "Name": "/root/.cache/pip/wheels/85/de",
+        "Size": 573299
+      },
+      {
+        "Name": "/root/.cache/pip/wheels/85/de/9d",
+        "Size": 573299
+      },
+      {
+        "Name": "/root/.cache/pip/wheels/85/de/9d/401c0a7d1ac4cafb71501aeb1a561b5b16214197502a783a3d",
+        "Size": 573299
+      },
+      {
+        "Name": "/root/.cache/pip/wheels/85/de/9d/401c0a7d1ac4cafb71501aeb1a561b5b16214197502a783a3d/whedon-0.0.1-py2.py3-none-any.whl",
+        "Size": 573299
       },
       {
         "Name": "/root/.cache/pip/wheels/ad",
@@ -6694,26 +6718,6 @@
       {
         "Name": "/root/.cache/pip/wheels/ad/da/0c/74eb680767247273e2cf2723482cb9c924fe70af57c334513f/PyYAML-3.13-cp27-cp27mu-linux_x86_64.whl",
         "Size": 42984
-      },
-      {
-        "Name": "/root/.cache/pip/wheels/f7",
-        "Size": 572822
-      },
-      {
-        "Name": "/root/.cache/pip/wheels/f7/ee",
-        "Size": 572822
-      },
-      {
-        "Name": "/root/.cache/pip/wheels/f7/ee/1c",
-        "Size": 572822
-      },
-      {
-        "Name": "/root/.cache/pip/wheels/f7/ee/1c/eb41cb9cacc8710733423b1b8bc18277922f83bbf1648346df",
-        "Size": 572822
-      },
-      {
-        "Name": "/root/.cache/pip/wheels/f7/ee/1c/eb41cb9cacc8710733423b1b8bc18277922f83bbf1648346df/whedon-0.0.2-cp27-none-any.whl",
-        "Size": 572822
       },
       {
         "Name": "/root/.profile",
@@ -7041,7 +7045,7 @@
       },
       {
         "Name": "/usr",
-        "Size": 851733084
+        "Size": 851731506
       },
       {
         "Name": "/usr/bin",
@@ -34653,7 +34657,7 @@
       },
       {
         "Name": "/usr/local",
-        "Size": 12088559
+        "Size": 12086981
       },
       {
         "Name": "/usr/local/bin",
@@ -34701,15 +34705,15 @@
       },
       {
         "Name": "/usr/local/lib",
-        "Size": 12083533
+        "Size": 12081955
       },
       {
         "Name": "/usr/local/lib/python2.7",
-        "Size": 12083533
+        "Size": 12081955
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages",
-        "Size": 12083533
+        "Size": 12081955
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/PyYAML-3.13.dist-info",
@@ -38125,34 +38129,34 @@
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon",
-        "Size": 94326
+        "Size": 91307
       },
       {
-        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.2.dist-info",
-        "Size": 6420
+        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.1.dist-info",
+        "Size": 7861
       },
       {
-        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.2.dist-info/INSTALLER",
+        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.1.dist-info/INSTALLER",
         "Size": 4
       },
       {
-        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.2.dist-info/METADATA",
-        "Size": 2604
+        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.1.dist-info/METADATA",
+        "Size": 4052
       },
       {
-        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.2.dist-info/RECORD",
-        "Size": 3659
+        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.1.dist-info/RECORD",
+        "Size": 3635
       },
       {
-        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.2.dist-info/WHEEL",
-        "Size": 93
+        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.1.dist-info/WHEEL",
+        "Size": 110
       },
       {
-        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.2.dist-info/entry_points.txt",
+        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.1.dist-info/entry_points.txt",
         "Size": 47
       },
       {
-        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.2.dist-info/top_level.txt",
+        "Name": "/usr/local/lib/python2.7/dist-packages/whedon-0.0.1.dist-info/top_level.txt",
         "Size": 13
       },
       {
@@ -38165,23 +38169,23 @@
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/cli",
-        "Size": 10977
+        "Size": 11228
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/cli/__init__.py",
-        "Size": 3448
+        "Size": 3607
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/cli/__init__.pyc",
-        "Size": 3380
+        "Size": 3482
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/cli/paper.py",
-        "Size": 1089
+        "Size": 1085
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/cli/paper.pyc",
-        "Size": 1021
+        "Size": 1015
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/cli/shell.py",
@@ -38229,7 +38233,7 @@
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main",
-        "Size": 24557
+        "Size": 21307
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main/__init__.py",
@@ -38241,7 +38245,7 @@
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main/base",
-        "Size": 17557
+        "Size": 17588
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main/base/__init__.py",
@@ -38253,11 +38257,11 @@
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main/base/command.py",
-        "Size": 1756
+        "Size": 1772
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main/base/command.pyc",
-        "Size": 2054
+        "Size": 2069
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main/base/flags.py",
@@ -38285,15 +38289,11 @@
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main/paper.py",
-        "Size": 2326
-      },
-      {
-        "Name": "/usr/local/lib/python2.7/dist-packages/whedon/main/paper.pyc",
-        "Size": 3283
+        "Size": 2328
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/utils",
-        "Size": 23726
+        "Size": 23706
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/utils/__init__.py",
@@ -38313,11 +38313,11 @@
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/utils/terminal.py",
-        "Size": 4177
+        "Size": 4167
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/utils/terminal.pyc",
-        "Size": 3970
+        "Size": 3960
       },
       {
         "Name": "/usr/local/lib/python2.7/dist-packages/whedon/utils/web.py",
@@ -139453,7 +139453,7 @@
       },
       {
         "Name": "/var",
-        "Size": 66678388
+        "Size": 66678387
       },
       {
         "Name": "/var/backups",
@@ -139517,11 +139517,11 @@
       },
       {
         "Name": "/var/lib",
-        "Size": 65009242
+        "Size": 65009241
       },
       {
         "Name": "/var/lib/apt",
-        "Size": 41500765
+        "Size": 41500761
       },
       {
         "Name": "/var/lib/apt/extended_states",
@@ -139529,7 +139529,7 @@
       },
       {
         "Name": "/var/lib/apt/lists",
-        "Size": 41483226
+        "Size": 41483222
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_InRelease",
@@ -139545,7 +139545,7 @@
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_main_binary-amd64_Packages.lz4",
-        "Size": 639131
+        "Size": 639124
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_multiverse_binary-amd64_Packages.lz4",
@@ -139553,7 +139553,7 @@
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_binary-amd64_Packages.lz4",
-        "Size": 345903
+        "Size": 345906
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_source_Sources.lz4",
@@ -146461,7 +146461,7 @@
       },
       {
         "Name": "/var/lib/texmf",
-        "Size": 13971482
+        "Size": 13971485
       },
       {
         "Name": "/var/lib/texmf/dvipdfmx",
@@ -146613,11 +146613,11 @@
       },
       {
         "Name": "/var/lib/texmf/web2c",
-        "Size": 13164851
+        "Size": 13164854
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex",
-        "Size": 5008455
+        "Size": 5008453
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/dvilualatex.fmt",
@@ -146629,7 +146629,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/dviluatex.fmt",
-        "Size": 1139031
+        "Size": 1139030
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/dviluatex.log",
@@ -146637,7 +146637,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/lualatex.fmt",
-        "Size": 1349080
+        "Size": 1349074
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/lualatex.log",
@@ -146645,7 +146645,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/luatex.fmt",
-        "Size": 1138937
+        "Size": 1138942
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/luatex.log",
@@ -146733,11 +146733,11 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex",
-        "Size": 4682468
+        "Size": 4682473
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xelatex.fmt",
-        "Size": 2420966
+        "Size": 2420968
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xelatex.log",
@@ -146745,7 +146745,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xetex.fmt",
-        "Size": 2246075
+        "Size": 2246078
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xetex.log",
@@ -146902,7 +146902,7 @@
     ]
   },
   {
-    "Image": "openbases/whedon:4b643fefea",
+    "Image": "openbases/whedon:417fc84873",
     "AnalyzeType": "History",
     "Analysis": [
       "/bin/sh -c #(nop) ADD file:3df374a69ce696c21058366678c1ceb89e11349e52decfd35de0ee3bd8dc1162 in /",
@@ -146915,14 +146915,14 @@
       "/bin/sh -c #(nop)  ENV DEBIAN_FRONTEND=noninteractive",
       "/bin/sh -c #(nop)  ENV WHEDON_DIR=/opt/whedon",
       "/bin/sh -c apt update \u0026\u0026     apt install --yes --no-install-recommends        git        biber        build-essential        lmodern        pandoc        pandoc-citeproc        texlive-xetex        texlive        texlive-latex-extra        texlive-bibtex-extra        texlive-fonts-recommended        wget \u0026\u0026     wget -O /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-1-amd64.deb \u0026\u0026     dpkg -i /tmp/pandoc.deb \u0026\u0026     wget https://bootstrap.pypa.io/get-pip.py \u0026\u0026     python get-pip.py \u0026\u0026     git clone https://github.com/openjournals/whedon.git \"${WHEDON_DIR}\" \u0026\u0026     mkdir -p /data /code  \u0026\u0026     pip install --upgrade pip \u0026\u0026     pip install whedon",
-      "/bin/sh -c #(nop) ADD dir:25f8327c7b94039bab04b49e2129a1b5451644f36dbde85d72abc9086ec110aa in /code",
+      "/bin/sh -c #(nop) ADD dir:7e077116b295e1ab1e51631dc42f7df8fee1e54b0c8d09761ad5b7dbbd2f6e8f in /code",
       "/bin/sh -c chmod u+x /code/entrypoint.sh",
       "/bin/sh -c #(nop) WORKDIR /data",
       "/bin/sh -c #(nop)  ENTRYPOINT [\"/bin/bash\" \"/code/entrypoint.sh\"]"
     ]
   },
   {
-    "Image": "openbases/whedon:4b643fefea",
+    "Image": "openbases/whedon:417fc84873",
     "AnalyzeType": "Pip",
     "Analysis": [
       {
@@ -146946,8 +146946,8 @@
       {
         "Name": "whedon",
         "Path": "/usr/local/lib/python2.7/dist-packages",
-        "Version": "0.0.2",
-        "Size": 94326
+        "Version": "0.0.1",
+        "Size": 91307
       },
       {
         "Name": "wheel",

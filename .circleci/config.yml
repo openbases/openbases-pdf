@@ -6,6 +6,8 @@
 
 # In addition to the variables defined above, you should set the GITHUB_EMAIL
 # and GITHUB_USER to be the email associated with the repo 
+# WHEDON_ARGS for any special commnands to be passed to the openbases/whedon 
+# entrypoint
 # (for deploy to Github pages). if not set, this step won't be done 
 
 
@@ -51,25 +53,16 @@ dockerenv: &dockerenv
         fi
         # If not set, define CONTAINER_NAME
         if [ ! -n "${CONTAINER_NAME:-}" ]; then
-            CONTAINER_NAME="${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
+            CONTAINER_NAME="openbases/whedon"
         fi
         echo "Container name is ${CONTAINER_NAME}"
         if [ ! -n "${DOCKERFILE_PATH:-}" ]; then
             DOCKERFILE_PATH="Dockerfile";
         fi
         echo "Dockerfile will be looked for at ${DOCKERFILE_PATH}"
-        # If not set, define REPO_NAME
-        if [ ! -n "${REPO_NAME:-}" ]; then
-            LOCAL_REPO="${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}"
-            REPO_NAME=/tmp/src
-            echo "Repository name (REPO_NAME) is not defined, will build ${LOCAL_REPO} in ${REPO_NAME}"
-        else
-            echo "Repository name found defined for build: ${REPO_NAME}"
-        fi
         # export to bash environment
         echo "export CONTAINER_NAME=${CONTAINER_NAME}" >> ${BASH_ENV}
         echo "export DOCKER_TAG=${DOCKER_TAG}" >> ${BASH_ENV}
-        echo "export REPO_NAME=${REPO_NAME}" >> ${BASH_ENV}
         echo "export DOCKERFILE_PATH=${DOCKERFILE_PATH}" >> ${BASH_ENV}
         cat ${BASH_ENV}
 
@@ -148,6 +141,36 @@ dockerbuild: &dockerbuild
         docker images
 
 
+whedon: &whedon
+    name: use whedon docker container to generate pdf
+    command: |
+        source ${BASH_ENV}
+        cd /tmp/src
+        echo "1. Starting Whedon Docker bot!"
+        echo "docker run --name whedon  --entrypoint bash -dt ${CONTAINER_NAME}:${DOCKER_TAG}"
+        docker run --name whedon  --entrypoint bash -dt "${CONTAINER_NAME}:${DOCKER_TAG}"
+        echo "2. Copying paper stuffs for Whedon..."
+        echo "docker cp ./paper/. whedon:/data/"
+        docker cp ./paper/. whedon:/data/
+        echo "3. Go Whedon Go, generate the PDF!"
+        echo "docker exec whedon /bin/bash /code/entrypoint.sh pdf"
+        docker exec whedon /bin/bash /code/entrypoint.sh pdf /data/paper.md "${WHEDON_ARGS}"
+        echo "4. Obtaining finished paper.pdf"
+        mkdir -p /tmp/paper
+        echo "docker cp whedon:/data/. /tmp/paper"
+        docker cp whedon:/data/. /tmp/paper/
+        echo "5. Creating archive."
+        echo "tar czf paper.tar.gz /tmp/paper"
+        tar czf paper.tar.gz /tmp/paper
+        mv paper.tar.gz /tmp/paper
+        echo "6. Stopping whedon..."
+        docker stop whedon
+        echo "Contents of /tmp"
+        ls /tmp
+        echo "Contents of /tmp/paper"
+        ls /tmp/paper
+
+
 ################################################################################
 # Jobs
 ################################################################################
@@ -171,18 +194,18 @@ jobs:
             - docker-v1-{{ .Branch }}
           paths:
             - /tmp/cache/container.tar.gz
-      - restore_cache:
-          key: dependency-cache-repo2docker
       - checkout
       - setup_remote_docker
       - run: *dockerenv
       - run: *dockerbuild
       - run: *dockersave
+      - run: *whedon
       - persist_to_workspace:
           root: /tmp
           paths:
             - cache/container.tar.gz
             - src
+            - paper
 
   update_cache:
     <<: *defaults
@@ -220,6 +243,8 @@ jobs:
           no_output_timeout: 40m
           command: |
             source ${BASH_ENV}
+            ls /tmp
+            ls /tmp/paper
             which container-diff-linux-amd64
             if [[ -n "${GITHUB_EMAIL:-}" ]];
                 then
@@ -233,21 +258,30 @@ jobs:
                     git checkout gh-pages || git checkout --orphan gh-pages
                     # Save all previous tags, so we don't pull and re-generate
                     mkdir -p ../out-old
-                    if ls *.json 1> /dev/null 2>&1; then
-                        cp *.json ../out-old/
-                    fi
+                    for ext in json tar.gz pdf
+                        do
+                        if /bin/bash -c "ls *.${ext}" 1> /dev/null 2>&1; then
+                                /bin/bash -c "cp *.${ext} ../out-old/" 
+                        fi
+                    done                    
                     git rm -rf .
                     # ensure that github pages are ignored
                     mkdir -p .circleci && cp -a ../.circleci/. .circleci/.
                     # Copy back previous files
-                    if ls ../out-old/*.json 1> /dev/null 2>&1; then
-                        cp ../out-old/*.json ${PWD}
-                    fi
+                    for ext in json tar.gz pdf
+                        do
+                           if /bin/bash -c "ls ../out-old/*.${ext}" 1> /dev/null 2>&1; then
+                               /bin/bash -c "cp ../out-old/*.${ext} ${PWD}"
+                        fi
+                    done
                     cp .circleci/template.html template.html
                     # replace container name in index.html
                     envsubst < template.html > index.html
                     echo "2. Generating manifest for latest..."
                     docker inspect ${CONTAINER_NAME}:${DOCKER_TAG} > manifest-latest.json
+                    echo "3. Generating paper and archive for latest..."
+                    cp /tmp/paper/paper.pdf paper-latest.pdf
+                    cp /tmp/paper/paper.tar.gz paper-latest.tar.gz
                     # We will keep a list of tags
                     rm -rf tags.json && touch tags.json
                     for tag in $(curl -L -s "https://registry.hub.docker.com/v2/repositories/${CONTAINER_NAME}/tags?page_size=1024" | jq --raw-output '."results"[]["name"]')
@@ -292,17 +326,6 @@ workflows:
             tags:
               only: /.*/
 
-      - update_cache:
-          requires:
-            - build
-            - deploy
-            - manifest
-          filters:
-            branches:
-              ignore: /docs?/.*/
-            tags:
-              only: /.*/
-
       # Upload the container to Docker Hub
       - deploy:
           requires:
@@ -321,5 +344,16 @@ workflows:
           filters:
             branches:
               only: master
+            tags:
+              only: /.*/
+
+      - update_cache:
+          requires:
+            - build
+            - deploy
+            - manifest
+          filters:
+            branches:
+              ignore: /docs?/.*/
             tags:
               only: /.*/
