@@ -8,9 +8,7 @@
 
 This is an automated build for a Docker container to serve our favorite, our
 friendly robot, the fantastic [whedon](https://www.github.com/openjournals/whedon),
-specifically to build you a paper! This container serves whedon to build the PDF, but also serves other tests 
-to validate the paper. You can fork the repository to have an automated build
-(or preview) of your paper! Let's get started:
+specifically to build you a paper! This container serves whedon to build the PDF, but also serves other tests  to validate the paper. You can fork the repository to have an automated build (or preview) of your paper! Let's get started:
 
 ## Preparation
 
@@ -41,16 +39,14 @@ paper [here](https://joss.readthedocs.io/en/latest/submitting.html).
 
 You can use this container to build and preview a pdf for your submission to
 an open journals journal. The container is ready for you to go, pre-built on
-Docker Hub as [openbases/whedon](https://hub.docker.com/r/openbases/whedon/) and you
-can even look at [tags, manifests, pdfs, and changes over time](https://openbases.github.io/whedon/) for the
-this container. 
+Docker Hub as [openbases/builder-whedon](https://hub.docker.com/r/openbases/whedon/) and youcan even look at [tags, manifests, pdfs, and changes over time](https://openbases.github.io/builder-whedon/) for this container. 
 
 We will also be providing entry points to run tests for a submission, but for
 now are just starting with PDF generation. To see full usage, run without
 arguments:
 
 ```bash
-$ docker run --rm -v $PWD/paper:/data openbases/whedon
+$ docker run --rm -v $PWD/paper:/data openbases/builder-whedon
 Usage:
 
          docker run <options> <container> <action> [options] ...
@@ -87,7 +83,7 @@ in the command above.
 Here is the "use all defaults" generation command:
 
 ```bash
-docker run -v $PWD/paper:/data openbases/whedon pdf
+docker run -v $PWD/paper:/data openbases/builder-whedon pdf
 ```
 
 ### Interactive
@@ -96,7 +92,7 @@ Here is how you might want to shell inside the container to use the software (e.
 whedon is at `/opt/whedon` and `pandoc` is installed.
 
 ```bash
-docker run -it -v $PWD/paper:/data --entrypoint bash openbases/whedon
+docker run -it -v $PWD/paper:/data --entrypoint bash openbases/builder-whedon
 ```
 
 The bound "paper" directory is now at "/data"
@@ -123,20 +119,19 @@ Today you will be doing the following:
   3.  creating a Github Machine User account to deploy back to Github Pages
   4.  push, commit, or create a pull request to trigger a build.
 
-You don't need to install any dependencies on your host to use the whedon container,
-it will be done on a continuous integration server, and  If you add a Machine
+You don't need to install any dependencies on your host to use the builder-whedon container, it will be done on a continuous integration server, and  If you add a Machine
 user (step 4) your paper will be deployed back
 to Github pages, for the record. If not, you can just preview it as an artifact,
 which is still very useful.
 
 ### Step 1. Clone the Repository
 
-First, fork the [whedon](https://www.github.com/openbases/whedon/)
+First, fork the [builder-whedon](https://www.github.com/openbases/builder-whedon/)
 Github repository to your account, and clone the branch.
 
 ```bash
-git clone https://www.github.com/<username>/whedone
-git clone git@github.com:<username>/whedon.git
+git clone https://www.github.com/<username>/builder-whedon
+git clone git@github.com:<username>/builder-whedon.git
 ```
 
 ### Step 2. Configuration
@@ -148,7 +143,7 @@ also a [template.html](template.html) file that is used as a template.
 The first does most of the steps required for build and deploy, including:
 
  1.  clone of the repository with your paper folder
- 2.  build the latest whedon container
+ 2.  build the latest builder-whedon container
  3.  generate a pdf, archive, and manifests and inspections
  4.  (optional) push back to Github pages
 
@@ -162,7 +157,7 @@ This happens all in the CI, and is ready to go for you! If you go under the "bui
 step in your workflow, you can click on the "artifacts" tab to see your paper outputs.
 
 We will also be providing a template that starts at step 3, so you don't need to wait
-for the whedon container to build (under development!)
+for the builder-whedon container to build (under development!)
 
 ### Step 4. (optional) Github Machine User
 
@@ -214,7 +209,7 @@ Under settings, click on the "Environment Variables" tab. In this
 section, you want to define the following:
 
  *  `GITHUB_USER` and `GITHUB_EMAIL` should be your machine user Github account
- *  `WHEDON_ARGS` should define any additional argument pairs (`--arg1 value1 --bool`) to pass to the [openbases/whedon container entrypoint](https://github.com/openbases/whedon/blob/master/entrypoint.sh). This will be passed as followed:
+ *  `WHEDON_ARGS` should define any additional argument pairs (`--arg1 value1 --bool`) to pass to the [openbases/builder-whedon container entrypoint](https://github.com/openbases/builder-whedon/blob/master/entrypoint.sh). This will be passed as followed:
 
 ```bash
 /bin/bash entrypoint.sh paper.md "${WHEDON_ARGS}"
@@ -251,6 +246,6 @@ build by editing the `.circleci/config.yml` file in your repository.
 
 Build the container
 
-```
-docker build -t openbases/whedon .
+```bash
+docker build -t openbases/builder-whedon .
 ```

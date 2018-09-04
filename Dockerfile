@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-# docker build -t openbases/whedon .
+# docker build -t openbases/builder-whedon .
 
 LABEL maintainer "@vsoch"
 ENV DEBIAN_FRONTEND noninteractive
