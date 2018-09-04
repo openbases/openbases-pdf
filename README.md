@@ -214,6 +214,11 @@ Under settings, click on the "Environment Variables" tab. In this
 section, you want to define the following:
 
  *  `GITHUB_USER` and `GITHUB_EMAIL` should be your machine user Github account
+ *  `WHEDON_ARGS` should define any additional argument pairs (`--arg1 value1 --bool`) to pass to the [openbases/whedon container entrypoint](https://github.com/openbases/whedon/blob/master/entrypoint.sh). This will be passed as followed:
+
+```bash
+/bin/bash entrypoint.sh paper.md "${WHEDON_ARGS}"
+```
 
 ### Step 6. Push and Deploy!
 

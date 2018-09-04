@@ -6,6 +6,8 @@
 
 # In addition to the variables defined above, you should set the GITHUB_EMAIL
 # and GITHUB_USER to be the email associated with the repo 
+# WHEDON_ARGS for any special commnands to be passed to the openbases/whedon 
+# entrypoint
 # (for deploy to Github pages). if not set, this step won't be done 
 
 
@@ -152,17 +154,20 @@ whedon: &whedon
         docker cp ./paper/. whedon:/data/
         echo "3. Go Whedon Go, generate the PDF!"
         echo "docker exec whedon /bin/bash /code/entrypoint.sh pdf"
-        docker exec whedon /bin/bash /code/entrypoint.sh pdf
+        docker exec whedon /bin/bash /code/entrypoint.sh pdf /data/paper.md "${WHEDON_ARGS}"
         echo "4. Obtaining finished paper.pdf"
         mkdir -p /tmp/paper
-        echo "docker cp whedon:/data/ /tmp/paper"
-        docker cp whedon:/data/ /tmp/paper/.
+        echo "docker cp whedon:/data/. /tmp/paper"
+        docker cp whedon:/data/. /tmp/paper/
         echo "5. Creating archive."
         echo "tar czf paper.tar.gz /tmp/paper"
         tar czf paper.tar.gz /tmp/paper
         mv paper.tar.gz /tmp/paper
+        echo "6. Stopping whedon..."
         docker stop whedon
+        echo "Contents of /tmp"
         ls /tmp
+        echo "Contents of /tmp/paper"
         ls /tmp/paper
 
 
