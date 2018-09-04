@@ -1,0 +1,102 @@
+[
+    {
+        "Id": "sha256:db74fe1be1a755f448e0238506000ea44e397d62a174f5ed5b67ede137108b37",
+        "RepoTags": [
+            "openbases/whedon:16d0bbd57b"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "",
+        "Created": "2018-09-04T02:58:07.353854024Z",
+        "Container": "e9b21451fffc076c333e069d92c75d4b5da2ee2d4d5a50200f78e2e909883551",
+        "ContainerConfig": {
+            "Hostname": "e9b21451fffc",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "WHEDON_DIR=/opt/whedon"
+            ],
+            "Cmd": [
+                "/bin/sh",
+                "-c",
+                "#(nop) ",
+                "ENTRYPOINT [\"/bin/bash\" \"/code/entrypoint.sh\"]"
+            ],
+            "ArgsEscaped": true,
+            "Image": "sha256:a58251b7554db2b3d7061c74322973f117212a63c99a924b9d1c454d405ad643",
+            "Volumes": null,
+            "WorkingDir": "/data",
+            "Entrypoint": [
+                "/bin/bash",
+                "/code/entrypoint.sh"
+            ],
+            "OnBuild": [],
+            "Labels": {
+                "maintainer": "@vsoch"
+            }
+        },
+        "DockerVersion": "17.09.0-ce",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DEBIAN_FRONTEND=noninteractive",
+                "WHEDON_DIR=/opt/whedon"
+            ],
+            "Cmd": null,
+            "ArgsEscaped": true,
+            "Image": "sha256:a58251b7554db2b3d7061c74322973f117212a63c99a924b9d1c454d405ad643",
+            "Volumes": null,
+            "WorkingDir": "/data",
+            "Entrypoint": [
+                "/bin/bash",
+                "/code/entrypoint.sh"
+            ],
+            "OnBuild": [],
+            "Labels": {
+                "maintainer": "@vsoch"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 978084786,
+        "VirtualSize": 978084786,
+        "GraphDriver": {
+            "Data": null,
+            "Name": "aufs"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:a30b835850bfd4c7e9495edf7085cedfad918219227c7157ff71e8afe2661f63",
+                "sha256:a2672464542154dc3fa4b31689055fe57dead430380899393285e4a190d042fe",
+                "sha256:b6a02001ba3318a8475fb7f54d7d870e4d7d71562b890b18d3cb58fe95bc6085",
+                "sha256:7422efa72a14c6f15af199905829c3d3fc3f7cadd7046e0ff1d2349ca6dfb159",
+                "sha256:ec8257ff6a7a399ac79e34864ce4e99b378c293f6e2865ea940f25df7982f34b",
+                "sha256:bc09b40b06f3de8ebe1fac3412d72bfae6dda9600534dced1e3588889e2c2ec7",
+                "sha256:fd6bb2430ce94cfe9d4a17c631bfdf5484e1c06f6954fff509820ffa469bf27f",
+                "sha256:6797631eb14788753f43fad3f1437788040abba5687d4bd51319f36459b0668a"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
