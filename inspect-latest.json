@@ -2229,7 +2229,7 @@
       },
       {
         "Name": "/code",
-        "Size": 2116202
+        "Size": 2655844
       },
       {
         "Name": "/code/.circleci",
@@ -2245,7 +2245,7 @@
       },
       {
         "Name": "/code/.git",
-        "Size": 1879217
+        "Size": 2418859
       },
       {
         "Name": "/code/.git/FETCH_HEAD",
@@ -2361,7 +2361,7 @@
       },
       {
         "Name": "/code/.git/objects",
-        "Size": 1860425
+        "Size": 2400067
       },
       {
         "Name": "/code/.git/objects/info",
@@ -2369,15 +2369,15 @@
       },
       {
         "Name": "/code/.git/objects/pack",
-        "Size": 1860425
+        "Size": 2400067
       },
       {
-        "Name": "/code/.git/objects/pack/pack-c8b73698fb7608b1dc64bffcbab15fa92fb37375.idx",
-        "Size": 5188
+        "Name": "/code/.git/objects/pack/pack-6535ec74fa73eb721bad4460c057c371e7ea1a18.idx",
+        "Size": 5440
       },
       {
-        "Name": "/code/.git/objects/pack/pack-c8b73698fb7608b1dc64bffcbab15fa92fb37375.pack",
-        "Size": 1855237
+        "Name": "/code/.git/objects/pack/pack-6535ec74fa73eb721bad4460c057c371e7ea1a18.pack",
+        "Size": 2394627
       },
       {
         "Name": "/code/.git/packed-refs",
@@ -6373,7 +6373,7 @@
       },
       {
         "Name": "/root",
-        "Size": 3754453
+        "Size": 3754376
       },
       {
         "Name": "/root/.bashrc",
@@ -6381,79 +6381,79 @@
       },
       {
         "Name": "/root/.cache",
-        "Size": 3750991
+        "Size": 3750914
       },
       {
         "Name": "/root/.cache/pip",
-        "Size": 3750991
+        "Size": 3750914
       },
       {
         "Name": "/root/.cache/pip/http",
-        "Size": 3135117
+        "Size": 3135040
       },
       {
         "Name": "/root/.cache/pip/http/0",
-        "Size": 1456212
+        "Size": 1456190
       },
       {
         "Name": "/root/.cache/pip/http/0/4",
-        "Size": 83320
+        "Size": 83292
       },
       {
         "Name": "/root/.cache/pip/http/0/4/1",
-        "Size": 83320
+        "Size": 83292
       },
       {
         "Name": "/root/.cache/pip/http/0/4/1/8",
-        "Size": 83320
+        "Size": 83292
       },
       {
         "Name": "/root/.cache/pip/http/0/4/1/8/c",
-        "Size": 83320
+        "Size": 83292
       },
       {
         "Name": "/root/.cache/pip/http/0/4/1/8/c/0418c83b80f7f7bfaec2738bfbbee53d2c1562196c0781702f6eddc8",
-        "Size": 83320
+        "Size": 83292
       },
       {
         "Name": "/root/.cache/pip/http/0/9",
-        "Size": 803073
+        "Size": 803074
       },
       {
         "Name": "/root/.cache/pip/http/0/9/9",
-        "Size": 803073
+        "Size": 803074
       },
       {
         "Name": "/root/.cache/pip/http/0/9/9/2",
-        "Size": 803073
+        "Size": 803074
       },
       {
         "Name": "/root/.cache/pip/http/0/9/9/2/9",
-        "Size": 803073
+        "Size": 803074
       },
       {
         "Name": "/root/.cache/pip/http/0/9/9/2/9/099293f36cf879c1d236e768020fc5000a5f19e4b626b435e4cc2dab",
-        "Size": 803073
+        "Size": 803074
       },
       {
         "Name": "/root/.cache/pip/http/0/d",
-        "Size": 569819
+        "Size": 569824
       },
       {
         "Name": "/root/.cache/pip/http/0/d/c",
-        "Size": 569819
+        "Size": 569824
       },
       {
         "Name": "/root/.cache/pip/http/0/d/c/e",
-        "Size": 569819
+        "Size": 569824
       },
       {
         "Name": "/root/.cache/pip/http/0/d/c/e/7",
-        "Size": 569819
+        "Size": 569824
       },
       {
         "Name": "/root/.cache/pip/http/0/d/c/e/7/0dce7bd2bec2d9cd65f5b2c806ae77d1be0d60445a9a1335c30673ed",
-        "Size": 569819
+        "Size": 569824
       },
       {
         "Name": "/root/.cache/pip/http/3",
@@ -6481,191 +6481,191 @@
       },
       {
         "Name": "/root/.cache/pip/http/4",
-        "Size": 7934
+        "Size": 7903
       },
       {
         "Name": "/root/.cache/pip/http/4/d",
-        "Size": 7934
+        "Size": 7903
       },
       {
         "Name": "/root/.cache/pip/http/4/d/2",
-        "Size": 7934
+        "Size": 7903
       },
       {
         "Name": "/root/.cache/pip/http/4/d/2/7",
-        "Size": 7934
+        "Size": 7903
       },
       {
         "Name": "/root/.cache/pip/http/4/d/2/7/2",
-        "Size": 7934
+        "Size": 7903
       },
       {
         "Name": "/root/.cache/pip/http/4/d/2/7/2/4d272e6453941ce8b0a37a02cdb1685fc612c33441fa74691fb40656",
-        "Size": 7934
+        "Size": 7903
       },
       {
         "Name": "/root/.cache/pip/http/9",
-        "Size": 1308653
+        "Size": 1308656
       },
       {
         "Name": "/root/.cache/pip/http/9/3",
-        "Size": 1308653
+        "Size": 1308656
       },
       {
         "Name": "/root/.cache/pip/http/9/3/4",
-        "Size": 1308653
+        "Size": 1308656
       },
       {
         "Name": "/root/.cache/pip/http/9/3/4/0",
-        "Size": 1308653
+        "Size": 1308656
       },
       {
         "Name": "/root/.cache/pip/http/9/3/4/0/9",
-        "Size": 1308653
+        "Size": 1308656
       },
       {
         "Name": "/root/.cache/pip/http/9/3/4/0/9/93409091c89bba223e1f5ad63ffeb397278496badca7f7b4a809caa7",
-        "Size": 1308653
+        "Size": 1308656
       },
       {
         "Name": "/root/.cache/pip/http/a",
-        "Size": 282352
+        "Size": 282324
       },
       {
         "Name": "/root/.cache/pip/http/a/1",
-        "Size": 10836
+        "Size": 10807
       },
       {
         "Name": "/root/.cache/pip/http/a/1/9",
-        "Size": 10836
+        "Size": 10807
       },
       {
         "Name": "/root/.cache/pip/http/a/1/9/5",
-        "Size": 10836
+        "Size": 10807
       },
       {
         "Name": "/root/.cache/pip/http/a/1/9/5/3",
-        "Size": 10836
+        "Size": 10807
       },
       {
         "Name": "/root/.cache/pip/http/a/1/9/5/3/a19537d3cf37c122db841d6fe4cd322bc10d1a558bb00d146b85cb9a",
-        "Size": 10836
+        "Size": 10807
       },
       {
         "Name": "/root/.cache/pip/http/a/2",
-        "Size": 271516
+        "Size": 271517
       },
       {
         "Name": "/root/.cache/pip/http/a/2/a",
-        "Size": 271516
+        "Size": 271517
       },
       {
         "Name": "/root/.cache/pip/http/a/2/a/f",
-        "Size": 271516
+        "Size": 271517
       },
       {
         "Name": "/root/.cache/pip/http/a/2/a/f/c",
-        "Size": 271516
+        "Size": 271517
       },
       {
         "Name": "/root/.cache/pip/http/a/2/a/f/c/a2afc3895679902efcd54803968bcc2c1f9099fec4850b49c706bc36",
-        "Size": 271516
+        "Size": 271517
       },
       {
         "Name": "/root/.cache/pip/http/b",
-        "Size": 8183
+        "Size": 8184
       },
       {
         "Name": "/root/.cache/pip/http/b/8",
-        "Size": 8183
+        "Size": 8184
       },
       {
         "Name": "/root/.cache/pip/http/b/8/6",
-        "Size": 8183
+        "Size": 8184
       },
       {
         "Name": "/root/.cache/pip/http/b/8/6/2",
-        "Size": 8183
+        "Size": 8184
       },
       {
         "Name": "/root/.cache/pip/http/b/8/6/2/6",
-        "Size": 8183
+        "Size": 8184
       },
       {
         "Name": "/root/.cache/pip/http/b/8/6/2/6/b862637a242a4033f1ba3be874e038f3a95ab29277da4c878f7c162d",
-        "Size": 8183
+        "Size": 8184
       },
       {
         "Name": "/root/.cache/pip/http/c",
-        "Size": 6154
+        "Size": 6155
       },
       {
         "Name": "/root/.cache/pip/http/c/8",
-        "Size": 6154
+        "Size": 6155
       },
       {
         "Name": "/root/.cache/pip/http/c/8/3",
-        "Size": 6154
+        "Size": 6155
       },
       {
         "Name": "/root/.cache/pip/http/c/8/3/9",
-        "Size": 6154
+        "Size": 6155
       },
       {
         "Name": "/root/.cache/pip/http/c/8/3/9/b",
-        "Size": 6154
+        "Size": 6155
       },
       {
         "Name": "/root/.cache/pip/http/c/8/3/9/b/c839b14831716900da0ee0218182b6005455eb7e1b88b3b37cf8a455",
-        "Size": 6154
+        "Size": 6155
       },
       {
         "Name": "/root/.cache/pip/http/d",
-        "Size": 1296
+        "Size": 1293
       },
       {
         "Name": "/root/.cache/pip/http/d/8",
-        "Size": 1296
+        "Size": 1293
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b",
-        "Size": 1296
+        "Size": 1293
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0",
-        "Size": 1296
+        "Size": 1293
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0/b",
-        "Size": 1296
+        "Size": 1293
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0/b/d8b0b8945179eae5bb9abb9826e25b97eab0bd8f1802e8b4aec09387",
-        "Size": 1296
+        "Size": 1293
       },
       {
         "Name": "/root/.cache/pip/http/e",
-        "Size": 42463
+        "Size": 42465
       },
       {
         "Name": "/root/.cache/pip/http/e/2",
-        "Size": 42463
+        "Size": 42465
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f",
-        "Size": 42463
+        "Size": 42465
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0",
-        "Size": 42463
+        "Size": 42465
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0/8",
-        "Size": 42463
+        "Size": 42465
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0/8/e2f0834a186adb91203d196c43046032d4765c360aff1cd98806a975",
-        "Size": 42463
+        "Size": 42465
       },
       {
         "Name": "/root/.cache/pip/selfcheck.json",
@@ -139453,7 +139453,7 @@
       },
       {
         "Name": "/var",
-        "Size": 66678383
+        "Size": 66679303
       },
       {
         "Name": "/var/backups",
@@ -139517,11 +139517,11 @@
       },
       {
         "Name": "/var/lib",
-        "Size": 65009237
+        "Size": 65010149
       },
       {
         "Name": "/var/lib/apt",
-        "Size": 41500760
+        "Size": 41501670
       },
       {
         "Name": "/var/lib/apt/extended_states",
@@ -139529,7 +139529,7 @@
       },
       {
         "Name": "/var/lib/apt/lists",
-        "Size": 41483221
+        "Size": 41484131
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_InRelease",
@@ -139545,7 +139545,7 @@
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_main_binary-amd64_Packages.lz4",
-        "Size": 639126
+        "Size": 639545
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_multiverse_binary-amd64_Packages.lz4",
@@ -139553,7 +139553,7 @@
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_binary-amd64_Packages.lz4",
-        "Size": 345903
+        "Size": 345659
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_source_Sources.lz4",
@@ -139601,7 +139601,7 @@
       },
       {
         "Name": "/var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_main_binary-amd64_Packages.lz4",
-        "Size": 325166
+        "Size": 325901
       },
       {
         "Name": "/var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_multiverse_binary-amd64_Packages.lz4",
@@ -146461,7 +146461,7 @@
       },
       {
         "Name": "/var/lib/texmf",
-        "Size": 13971482
+        "Size": 13971484
       },
       {
         "Name": "/var/lib/texmf/dvipdfmx",
@@ -146613,11 +146613,11 @@
       },
       {
         "Name": "/var/lib/texmf/web2c",
-        "Size": 13164851
+        "Size": 13164853
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex",
-        "Size": 5008453
+        "Size": 5008454
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/dvilualatex.fmt",
@@ -146629,7 +146629,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/dviluatex.fmt",
-        "Size": 1139029
+        "Size": 1139030
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/dviluatex.log",
@@ -146733,7 +146733,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex",
-        "Size": 4682470
+        "Size": 4682471
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xelatex.fmt",
@@ -146745,7 +146745,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xetex.fmt",
-        "Size": 2246075
+        "Size": 2246076
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xetex.log",
@@ -146825,7 +146825,7 @@
       },
       {
         "Name": "/var/log",
-        "Size": 522067
+        "Size": 522075
       },
       {
         "Name": "/var/log/alternatives.log",
@@ -146833,11 +146833,11 @@
       },
       {
         "Name": "/var/log/apt",
-        "Size": 108406
+        "Size": 108414
       },
       {
         "Name": "/var/log/apt/eipp.log.xz",
-        "Size": 16988
+        "Size": 16996
       },
       {
         "Name": "/var/log/apt/history.log",
@@ -146915,7 +146915,7 @@
       "/bin/sh -c #(nop)  ENV DEBIAN_FRONTEND=noninteractive",
       "/bin/sh -c #(nop)  ENV WHEDON_DIR=/opt/whedon",
       "/bin/sh -c apt update \u0026\u0026     apt install --yes --no-install-recommends        git        biber        build-essential        lmodern        pandoc        pandoc-citeproc        texlive-xetex        texlive        texlive-latex-extra        texlive-bibtex-extra        texlive-fonts-recommended        wget \u0026\u0026     wget -O /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-1-amd64.deb \u0026\u0026     dpkg -i /tmp/pandoc.deb \u0026\u0026     wget https://bootstrap.pypa.io/get-pip.py \u0026\u0026     python get-pip.py \u0026\u0026     git clone https://github.com/openjournals/whedon.git \"${WHEDON_DIR}\" \u0026\u0026     mkdir -p /data /code  \u0026\u0026     pip install --upgrade pip \u0026\u0026     pip install whedon",
-      "/bin/sh -c #(nop) ADD dir:030421f77cec79fb4f1963391ad350f8231b525b166a12df2800ac2426bd5c22 in /code",
+      "/bin/sh -c #(nop) ADD dir:405e0f08bfa5aeaa5a0119270d7f8b6e4f7817dc9405ed9891a2eb6264c97fa2 in /code",
       "/bin/sh -c chmod u+x /code/entrypoint.sh",
       "/bin/sh -c #(nop) WORKDIR /data",
       "/bin/sh -c #(nop)  ENTRYPOINT [\"/bin/bash\" \"/code/entrypoint.sh\"]"
