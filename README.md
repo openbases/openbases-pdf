@@ -4,8 +4,6 @@
 
 > Hi friend! :wave:
 
-[![CircleCI](https://circleci.com/gh/openbases/builder-whedon.svg?style=svg)](https://circleci.com/gh/openbases/builder-whedon)
-
 This is an automated build for a Docker container to serve our favorite, our
 friendly robot, the fantastic [whedon](https://www.github.com/openjournals/whedon),
 specifically to build you a paper! This container serves whedon to build the PDF, but also serves other tests  to validate the paper. You can fork the repository to have an automated build (or preview) of your paper! Let's get started.
