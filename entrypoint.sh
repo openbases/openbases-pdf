@@ -43,7 +43,7 @@ get_default() {
     CUSTOM_DEFAULT="${3}"
 
     if [ -f "${CUSTOM_PATH}" ]; then
-        1>&2 echo "[custom ${CUSTOM_TYPE}] ${CUSTOM_PATH}"
+        1>&2 echo "[${CUSTOM_TYPE}] ${CUSTOM_PATH}"
     else
         # Second try, look in data
         if [ -f "/data/${CUSTOM_PATH}" ]; then
@@ -133,7 +133,7 @@ done
 # Template ---------------------------------------------------------------------
 
 PDF_TEMPLATE=$(get_default "${PDF_TEMPLATE}" "template" "/data/latex.template.joss")
-PDF_LOGO=$(get_default "${PDF_TEMPLATE}" "logo" "/data/joss-logo.png")
+PDF_LOGO=$(get_default "${PDF_LOGO}" "logo" "/data/joss-logo.png")
 
 # Generate ---------------------------------------------------------------------
 
