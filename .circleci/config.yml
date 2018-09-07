@@ -6,8 +6,8 @@
 
 # In addition to the variables defined above, you should set the GITHUB_EMAIL
 # and GITHUB_USER to be the email associated with the repo 
-# WHEDON_ARGS for any special commnands to be passed to the 
-# openbases/builder-whedon entrypoint
+# OPENBASES_PAPER_ARGS for any special commnands to be passed to the 
+# openbases/openbases-pdf entrypoint
 # (for deploy to Github pages). if not set, this step won't be done 
 
 
@@ -53,7 +53,7 @@ dockerenv: &dockerenv
         fi
         # If not set, define CONTAINER_NAME
         if [ ! -n "${CONTAINER_NAME:-}" ]; then
-            CONTAINER_NAME="openbases/builder-whedon"
+            CONTAINER_NAME="openbases/openbases-pdf"
         fi
         echo "Container name is ${CONTAINER_NAME}"
         if [ ! -n "${DOCKERFILE_PATH:-}" ]; then
@@ -141,30 +141,30 @@ dockerbuild: &dockerbuild
         docker images
 
 
-whedon: &whedon
-    name: use whedon docker container to generate pdf
+pdf: &pdf
+    name: use openbases/openbases-pdf docker container to generate pdf
     command: |
         source ${BASH_ENV}
         cd /tmp/src
-        echo "1. Starting Whedon Docker bot!"
-        echo "docker run --name whedon  --entrypoint bash -dt ${CONTAINER_NAME}:${DOCKER_TAG}"
-        docker run --name whedon  --entrypoint bash -dt "${CONTAINER_NAME}:${DOCKER_TAG}"
-        echo "2. Copying paper stuffs for Whedon..."
-        echo "docker cp ./paper/. whedon:/data/"
-        docker cp ./paper/. whedon:/data/
-        echo "3. Go Whedon Go, generate the PDF!"
-        echo "docker exec whedon /bin/bash /code/entrypoint.sh pdf"
-        docker exec whedon /bin/bash /code/entrypoint.sh pdf /data/paper.md "${WHEDON_ARGS}"
+        echo "1. Starting OpenBases PDF Builder bot!"
+        echo "docker run --name openbases-pdf  --entrypoint bash -dt ${CONTAINER_NAME}:${DOCKER_TAG}"
+        docker run --name openbases-pdf  --entrypoint bash -dt "${CONTAINER_NAME}:${DOCKER_TAG}"
+        echo "2. Copying paper stuffs for Open Bases PDF..."
+        echo "docker cp ./paper/. openbases-pdf:/data/"
+        docker cp ./paper/. openbases-pdf:/data/
+        echo "3. Go Robot Go, generate the PDF!"
+        echo "docker exec openbases-pdf /bin/bash /code/entrypoint.sh pdf"
+        docker exec openbases-pdf /bin/bash /code/entrypoint.sh pdf /data/paper.md "${OPENBASES_PAPER_ARGS}"
         echo "4. Obtaining finished paper.pdf"
         mkdir -p /tmp/paper
-        echo "docker cp whedon:/data/. /tmp/paper"
-        docker cp whedon:/data/. /tmp/paper/
+        echo "docker cp openbases-pdf:/data/. /tmp/paper"
+        docker cp openbases-pdf:/data/. /tmp/paper/
         echo "5. Creating archive."
         echo "tar czf paper.tar.gz /tmp/paper"
         tar czf paper.tar.gz /tmp/paper
         mv paper.tar.gz /tmp/paper
-        echo "6. Stopping whedon..."
-        docker stop whedon
+        echo "6. Stopping openbases-pdf..."
+        docker stop openbases-pdf
         echo "Contents of /tmp"
         ls /tmp
         echo "Contents of /tmp/paper"
@@ -199,7 +199,7 @@ jobs:
       - run: *dockerenv
       - run: *dockerbuild
       - run: *dockersave
-      - run: *whedon
+      - run: *pdf
       - persist_to_workspace:
           root: /tmp
           paths:

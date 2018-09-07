@@ -1,16 +1,16 @@
 [
     {
-        "Id": "sha256:e6cd8fc76d0a0c6ba866240ccdb08fa217c44b5bea7441cebf0c1287bf8c471b",
+        "Id": "sha256:97c21d4b6dea28fdd1a54c230abf6a1fae12ca24ce75870a73c6bf281e60da35",
         "RepoTags": [
-            "openbases/builder-whedon:ded6989aae"
+            "openbases/openbases-pdf:0d429e40f3"
         ],
         "RepoDigests": [],
         "Parent": "",
         "Comment": "",
-        "Created": "2018-09-05T22:54:18.755347704Z",
-        "Container": "fca1bdb6d56a30f84ddd1cd06ca05ff5af2389846f73967ca294f1db0299408c",
+        "Created": "2018-09-07T22:05:44.982407292Z",
+        "Container": "b87320b2df0b423cc1a09c1b20ac87da169d7399f408da8cbeb2f8cffdb78843",
         "ContainerConfig": {
-            "Hostname": "fca1bdb6d56a",
+            "Hostname": "b87320b2df0b",
             "Domainname": "",
             "User": "",
             "AttachStdin": false,
@@ -21,8 +21,7 @@
             "StdinOnce": false,
             "Env": [
                 "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-                "DEBIAN_FRONTEND=noninteractive",
-                "WHEDON_DIR=/opt/whedon"
+                "DEBIAN_FRONTEND=noninteractive"
             ],
             "Cmd": [
                 "/bin/sh",
@@ -31,7 +30,7 @@
                 "ENTRYPOINT [\"/bin/bash\" \"/code/entrypoint.sh\"]"
             ],
             "ArgsEscaped": true,
-            "Image": "sha256:6453e27d7930e8421a2bfc416f4b55f8513e79dfe596dac362e4d90b88acf1de",
+            "Image": "sha256:8c9de5699f689bac67c9b9359cbb1edeb3622232eb81f53c557c90abb483db33",
             "Volumes": null,
             "WorkingDir": "/data",
             "Entrypoint": [
@@ -57,12 +56,11 @@
             "StdinOnce": false,
             "Env": [
                 "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-                "DEBIAN_FRONTEND=noninteractive",
-                "WHEDON_DIR=/opt/whedon"
+                "DEBIAN_FRONTEND=noninteractive"
             ],
             "Cmd": null,
             "ArgsEscaped": true,
-            "Image": "sha256:6453e27d7930e8421a2bfc416f4b55f8513e79dfe596dac362e4d90b88acf1de",
+            "Image": "sha256:8c9de5699f689bac67c9b9359cbb1edeb3622232eb81f53c557c90abb483db33",
             "Volumes": null,
             "WorkingDir": "/data",
             "Entrypoint": [
@@ -76,8 +74,8 @@
         },
         "Architecture": "amd64",
         "Os": "linux",
-        "Size": 979714270,
-        "VirtualSize": 979714270,
+        "Size": 979521398,
+        "VirtualSize": 979521398,
         "GraphDriver": {
             "Data": null,
             "Name": "aufs"
@@ -90,9 +88,9 @@
                 "sha256:f73b2816c52ac5f8c1f64a1b309b70ff4318d11adff253da4320eee4b3236373",
                 "sha256:6a061ee02432e1472146296de3f6dab653f57c109316fa178b40a5052e695e41",
                 "sha256:8d7ea83e3c626d5ef1e6a05de454c3fe8b7a567db96293cb094e71930dba387d",
-                "sha256:4403d854edfd10e9bf2640b8293f98817fea8cb6dc9a4ffa7395c2e74e92cb73",
-                "sha256:5e72cc1fd7188743ca9efeffecae1a5b1017749eb71ec2a157dc00f3cbb94acc",
-                "sha256:4d2d4ad1ad55e0d3a97561f9836f3a4870986cf58e6259dbdeb465e7ba0c28d5"
+                "sha256:1a4f4e1b80b6c0781f749a34889d98385886c8a8524435d097a9049e1362306f",
+                "sha256:f95a8bcead7b4884af249082d67886bebf8e9a1dded312c1a9a184f1a5851d07",
+                "sha256:90801d3a247f19955e76280696367ef018c3729fcf96dd6da1cdf498a8791288"
             ]
         },
         "Metadata": {

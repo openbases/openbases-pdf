@@ -612,7 +612,7 @@ body {
 <body>
 
   <div id="demo">
-  <h1>openbases/builder-whedon</h1>
+  <h1>openbases/openbases-pdf</h1>
   <h2>Table of my containers and associated tags available on Docker Hub</h2>  
   <div class="table-responsive-vertical shadow-z-1">
   <!-- Table starts here -->
@@ -654,7 +654,7 @@ body {
   var row;
   $.each(lines, function(i,tag){
   if (tag!="") {
-      row = '<tr><td data-title="ID">'+ parseInt(i+1) +'</td><td data-title="Name">' + tag + '</td><td data-title="PDF"><a href="https://openbases.github.io/builder-whedon/paper-' + tag + '.pdf" target="_blank">paper-'+ tag +'.pdf</a> | <a href="https://openbases.github.io/builder-whedon/paper-' + tag + '.tar.gz" target="_blank">(archive)</a></td><td data-title="Link"><a href="https://hub.docker.com/r/openbases/builder-whedon" target="_blank">openbases/builder-whedon:'+ tag +'</a></td><td data-title="Manifest"><a href="https://openbases.github.io/builder-whedon/manifest-' + tag + '.json" target="_blank">manifest-'+ tag +'.json</a></td><td data-title="Inspect"><a href="https://openbases.github.io/builder-whedon/inspect-' + tag + '.json" target="_blank">inspect-'+ tag +'.json</a></td></tr>';
+      row = '<tr><td data-title="ID">'+ parseInt(i+1) +'</td><td data-title="Name">' + tag + '</td><td data-title="PDF"><a href="https://openbases.github.io/openbases-pdf/paper-' + tag + '.pdf" target="_blank">paper-'+ tag +'.pdf</a> | <a href="https://openbases.github.io/openbases-pdf/paper-' + tag + '.tar.gz" target="_blank">(archive)</a></td><td data-title="Link"><a href="https://hub.docker.com/r/openbases/openbases-pdf" target="_blank">openbases/openbases-pdf:'+ tag +'</a></td><td data-title="Manifest"><a href="https://openbases.github.io/openbases-pdf/manifest-' + tag + '.json" target="_blank">manifest-'+ tag +'.json</a></td><td data-title="Inspect"><a href="https://openbases.github.io/openbases-pdf/inspect-' + tag + '.json" target="_blank">inspect-'+ tag +'.json</a></td></tr>';
       $('#table-body').append(row);
      }
   });   

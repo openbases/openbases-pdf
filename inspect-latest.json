@@ -1,6 +1,6 @@
 [
   {
-    "Image": "openbases/builder-whedon:ded6989aae",
+    "Image": "openbases/openbases-pdf:0d429e40f3",
     "AnalyzeType": "Apt",
     "Analysis": [
       {
@@ -260,17 +260,17 @@
       },
       {
         "Name": "libavahi-client3",
-        "Version": "0.7-3.1ubuntu1",
+        "Version": "0.7-3.1ubuntu1.1",
         "Size": 125952
       },
       {
         "Name": "libavahi-common-data",
-        "Version": "0.7-3.1ubuntu1",
+        "Version": "0.7-3.1ubuntu1.1",
         "Size": 114688
       },
       {
         "Name": "libavahi-common3",
-        "Version": "0.7-3.1ubuntu1",
+        "Version": "0.7-3.1ubuntu1.1",
         "Size": 106496
       },
       {
@@ -1876,7 +1876,7 @@
     ]
   },
   {
-    "Image": "openbases/builder-whedon:ded6989aae",
+    "Image": "openbases/openbases-pdf:0d429e40f3",
     "AnalyzeType": "File",
     "Analysis": [
       {
@@ -2229,15 +2229,15 @@
       },
       {
         "Name": "/code",
-        "Size": 3202195
+        "Size": 3939624
       },
       {
         "Name": "/code/.circleci",
-        "Size": 37408
+        "Size": 37517
       },
       {
         "Name": "/code/.circleci/config.yml",
-        "Size": 12768
+        "Size": 12877
       },
       {
         "Name": "/code/.circleci/template.html",
@@ -2245,11 +2245,11 @@
       },
       {
         "Name": "/code/.git",
-        "Size": 2965339
+        "Size": 3604811
       },
       {
         "Name": "/code/.git/FETCH_HEAD",
-        "Size": 97
+        "Size": 96
       },
       {
         "Name": "/code/.git/HEAD",
@@ -2265,7 +2265,7 @@
       },
       {
         "Name": "/code/.git/config",
-        "Size": 268
+        "Size": 267
       },
       {
         "Name": "/code/.git/description",
@@ -2317,7 +2317,7 @@
       },
       {
         "Name": "/code/.git/index",
-        "Size": 1010
+        "Size": 1186
       },
       {
         "Name": "/code/.git/info",
@@ -2329,39 +2329,39 @@
       },
       {
         "Name": "/code/.git/logs",
-        "Size": 1262
+        "Size": 1259
       },
       {
         "Name": "/code/.git/logs/HEAD",
-        "Size": 888
+        "Size": 887
       },
       {
         "Name": "/code/.git/logs/refs",
-        "Size": 374
+        "Size": 372
       },
       {
         "Name": "/code/.git/logs/refs/heads",
-        "Size": 187
+        "Size": 186
       },
       {
         "Name": "/code/.git/logs/refs/heads/master",
-        "Size": 187
+        "Size": 186
       },
       {
         "Name": "/code/.git/logs/refs/remotes",
-        "Size": 187
+        "Size": 186
       },
       {
         "Name": "/code/.git/logs/refs/remotes/origin",
-        "Size": 187
+        "Size": 186
       },
       {
         "Name": "/code/.git/logs/refs/remotes/origin/HEAD",
-        "Size": 187
+        "Size": 186
       },
       {
         "Name": "/code/.git/objects",
-        "Size": 2946547
+        "Size": 3585775
       },
       {
         "Name": "/code/.git/objects/info",
@@ -2369,19 +2369,19 @@
       },
       {
         "Name": "/code/.git/objects/pack",
-        "Size": 2946547
+        "Size": 3585775
       },
       {
-        "Name": "/code/.git/objects/pack/pack-9da5cc38b885c027d0a31b95abf5b114499f39ab.idx",
-        "Size": 5804
+        "Name": "/code/.git/objects/pack/pack-546676542da1b56310496f9798fcc93c64196b1c.idx",
+        "Size": 6476
       },
       {
-        "Name": "/code/.git/objects/pack/pack-9da5cc38b885c027d0a31b95abf5b114499f39ab.pack",
-        "Size": 2940743
+        "Name": "/code/.git/objects/pack/pack-546676542da1b56310496f9798fcc93c64196b1c.pack",
+        "Size": 3579299
       },
       {
         "Name": "/code/.git/packed-refs",
-        "Size": 184
+        "Size": 257
       },
       {
         "Name": "/code/.git/refs",
@@ -2413,15 +2413,15 @@
       },
       {
         "Name": "/code/Dockerfile",
-        "Size": 983
+        "Size": 877
       },
       {
         "Name": "/code/README.md",
-        "Size": 11470
+        "Size": 564
       },
       {
         "Name": "/code/entrypoint.sh",
-        "Size": 4831
+        "Size": 4933
       },
       {
         "Name": "/code/img",
@@ -2433,7 +2433,7 @@
       },
       {
         "Name": "/code/paper",
-        "Size": 168147
+        "Size": 276905
       },
       {
         "Name": "/code/paper/img",
@@ -2446,6 +2446,14 @@
       {
         "Name": "/code/paper/img/portal.png",
         "Size": 133454
+      },
+      {
+        "Name": "/code/paper/joss-logo.png",
+        "Size": 98285
+      },
+      {
+        "Name": "/code/paper/latex.template.joss",
+        "Size": 10473
       },
       {
         "Name": "/code/paper/paper.bib",
@@ -5969,403 +5977,7 @@
       },
       {
         "Name": "/opt",
-        "Size": 954096
-      },
-      {
-        "Name": "/opt/whedon",
-        "Size": 954096
-      },
-      {
-        "Name": "/opt/whedon/.env-example",
-        "Size": 446
-      },
-      {
-        "Name": "/opt/whedon/.env.test",
-        "Size": 271
-      },
-      {
-        "Name": "/opt/whedon/.git",
-        "Size": 557675
-      },
-      {
-        "Name": "/opt/whedon/.git/HEAD",
-        "Size": 23
-      },
-      {
-        "Name": "/opt/whedon/.git/branches",
         "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/.git/config",
-        "Size": 267
-      },
-      {
-        "Name": "/opt/whedon/.git/description",
-        "Size": 73
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks",
-        "Size": 18848
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/applypatch-msg.sample",
-        "Size": 478
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/commit-msg.sample",
-        "Size": 896
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/fsmonitor-watchman.sample",
-        "Size": 3327
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/post-update.sample",
-        "Size": 189
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/pre-applypatch.sample",
-        "Size": 424
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/pre-commit.sample",
-        "Size": 1642
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/pre-push.sample",
-        "Size": 1348
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/pre-rebase.sample",
-        "Size": 4898
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/pre-receive.sample",
-        "Size": 544
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/prepare-commit-msg.sample",
-        "Size": 1492
-      },
-      {
-        "Name": "/opt/whedon/.git/hooks/update.sample",
-        "Size": 3610
-      },
-      {
-        "Name": "/opt/whedon/.git/index",
-        "Size": 4497
-      },
-      {
-        "Name": "/opt/whedon/.git/info",
-        "Size": 240
-      },
-      {
-        "Name": "/opt/whedon/.git/info/exclude",
-        "Size": 240
-      },
-      {
-        "Name": "/opt/whedon/.git/logs",
-        "Size": 558
-      },
-      {
-        "Name": "/opt/whedon/.git/logs/HEAD",
-        "Size": 186
-      },
-      {
-        "Name": "/opt/whedon/.git/logs/refs",
-        "Size": 372
-      },
-      {
-        "Name": "/opt/whedon/.git/logs/refs/heads",
-        "Size": 186
-      },
-      {
-        "Name": "/opt/whedon/.git/logs/refs/heads/master",
-        "Size": 186
-      },
-      {
-        "Name": "/opt/whedon/.git/logs/refs/remotes",
-        "Size": 186
-      },
-      {
-        "Name": "/opt/whedon/.git/logs/refs/remotes/origin",
-        "Size": 186
-      },
-      {
-        "Name": "/opt/whedon/.git/logs/refs/remotes/origin/HEAD",
-        "Size": 186
-      },
-      {
-        "Name": "/opt/whedon/.git/objects",
-        "Size": 532760
-      },
-      {
-        "Name": "/opt/whedon/.git/objects/info",
-        "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/.git/objects/pack",
-        "Size": 532760
-      },
-      {
-        "Name": "/opt/whedon/.git/objects/pack/pack-d717ff8449389dd6d25a81e943d5d51929659a99.idx",
-        "Size": 22688
-      },
-      {
-        "Name": "/opt/whedon/.git/objects/pack/pack-d717ff8449389dd6d25a81e943d5d51929659a99.pack",
-        "Size": 510072
-      },
-      {
-        "Name": "/opt/whedon/.git/packed-refs",
-        "Size": 336
-      },
-      {
-        "Name": "/opt/whedon/.git/refs",
-        "Size": 73
-      },
-      {
-        "Name": "/opt/whedon/.git/refs/heads",
-        "Size": 41
-      },
-      {
-        "Name": "/opt/whedon/.git/refs/heads/master",
-        "Size": 41
-      },
-      {
-        "Name": "/opt/whedon/.git/refs/remotes",
-        "Size": 32
-      },
-      {
-        "Name": "/opt/whedon/.git/refs/remotes/origin",
-        "Size": 32
-      },
-      {
-        "Name": "/opt/whedon/.git/refs/remotes/origin/HEAD",
-        "Size": 32
-      },
-      {
-        "Name": "/opt/whedon/.git/refs/tags",
-        "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/.gitignore",
-        "Size": 9
-      },
-      {
-        "Name": "/opt/whedon/.travis.yml",
-        "Size": 66
-      },
-      {
-        "Name": "/opt/whedon/Gemfile",
-        "Size": 39
-      },
-      {
-        "Name": "/opt/whedon/Gemfile.lock",
-        "Size": 2347
-      },
-      {
-        "Name": "/opt/whedon/LICENSE",
-        "Size": 1080
-      },
-      {
-        "Name": "/opt/whedon/README.md",
-        "Size": 6829
-      },
-      {
-        "Name": "/opt/whedon/Rakefile",
-        "Size": 272
-      },
-      {
-        "Name": "/opt/whedon/bin",
-        "Size": 3164
-      },
-      {
-        "Name": "/opt/whedon/bin/whedon",
-        "Size": 3164
-      },
-      {
-        "Name": "/opt/whedon/fixtures",
-        "Size": 163741
-      },
-      {
-        "Name": "/opt/whedon/fixtures/paper",
-        "Size": 113528
-      },
-      {
-        "Name": "/opt/whedon/fixtures/paper/paper.bib",
-        "Size": 2520
-      },
-      {
-        "Name": "/opt/whedon/fixtures/paper/paper.html",
-        "Size": 879
-      },
-      {
-        "Name": "/opt/whedon/fixtures/paper/paper.md",
-        "Size": 850
-      },
-      {
-        "Name": "/opt/whedon/fixtures/paper/paper.pdf",
-        "Size": 107289
-      },
-      {
-        "Name": "/opt/whedon/fixtures/paper/paper.xml",
-        "Size": 1201
-      },
-      {
-        "Name": "/opt/whedon/fixtures/paper/paper_with_missing_title.md",
-        "Size": 789
-      },
-      {
-        "Name": "/opt/whedon/fixtures/review_body.txt",
-        "Size": 3152
-      },
-      {
-        "Name": "/opt/whedon/fixtures/test_paper",
-        "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/fixtures/test_paper/nested",
-        "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/fixtures/test_paper/nested/paper.bib",
-        "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/fixtures/test_paper/nested/paper.md",
-        "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/fixtures/test_paper/paper.bib",
-        "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/fixtures/test_paper/paper.md",
-        "Size": 0
-      },
-      {
-        "Name": "/opt/whedon/fixtures/vcr_cassettes",
-        "Size": 47061
-      },
-      {
-        "Name": "/opt/whedon/fixtures/vcr_cassettes/review.yml",
-        "Size": 17083
-      },
-      {
-        "Name": "/opt/whedon/fixtures/vcr_cassettes/reviews.yml",
-        "Size": 29978
-      },
-      {
-        "Name": "/opt/whedon/lib",
-        "Size": 24154
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon",
-        "Size": 17213
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon.rb",
-        "Size": 6941
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/auditor.rb",
-        "Size": 897
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/author.rb",
-        "Size": 1661
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/bibtex.rb",
-        "Size": 2098
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/github.rb",
-        "Size": 351
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/orcid_validator.rb",
-        "Size": 1619
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/processor.rb",
-        "Size": 9308
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/review.rb",
-        "Size": 591
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/reviews.rb",
-        "Size": 650
-      },
-      {
-        "Name": "/opt/whedon/lib/whedon/version.rb",
-        "Size": 38
-      },
-      {
-        "Name": "/opt/whedon/resources",
-        "Size": 185691
-      },
-      {
-        "Name": "/opt/whedon/resources/apa.csl",
-        "Size": 14926
-      },
-      {
-        "Name": "/opt/whedon/resources/crossref.template",
-        "Size": 3146
-      },
-      {
-        "Name": "/opt/whedon/resources/jose-logo.png",
-        "Size": 58861
-      },
-      {
-        "Name": "/opt/whedon/resources/joss-logo.png",
-        "Size": 98285
-      },
-      {
-        "Name": "/opt/whedon/resources/latex.template",
-        "Size": 10473
-      },
-      {
-        "Name": "/opt/whedon/spec",
-        "Size": 6839
-      },
-      {
-        "Name": "/opt/whedon/spec/auditor_spec.rb",
-        "Size": 739
-      },
-      {
-        "Name": "/opt/whedon/spec/bibtex_spec.rb",
-        "Size": 1078
-      },
-      {
-        "Name": "/opt/whedon/spec/orcid_validator_spec.rb",
-        "Size": 1030
-      },
-      {
-        "Name": "/opt/whedon/spec/processor_spec.rb",
-        "Size": 1177
-      },
-      {
-        "Name": "/opt/whedon/spec/review_spec.rb",
-        "Size": 303
-      },
-      {
-        "Name": "/opt/whedon/spec/reviews_spec.rb",
-        "Size": 443
-      },
-      {
-        "Name": "/opt/whedon/spec/spec_helper.rb",
-        "Size": 257
-      },
-      {
-        "Name": "/opt/whedon/spec/whedon_spec.rb",
-        "Size": 1812
-      },
-      {
-        "Name": "/opt/whedon/whedon.gemspec",
-        "Size": 1473
       },
       {
         "Name": "/proc",
@@ -6373,7 +5985,7 @@
       },
       {
         "Name": "/root",
-        "Size": 3754464
+        "Size": 3754469
       },
       {
         "Name": "/root/.bashrc",
@@ -6381,15 +5993,15 @@
       },
       {
         "Name": "/root/.cache",
-        "Size": 3751002
+        "Size": 3751007
       },
       {
         "Name": "/root/.cache/pip",
-        "Size": 3751002
+        "Size": 3751007
       },
       {
         "Name": "/root/.cache/pip/http",
-        "Size": 3135128
+        "Size": 3135133
       },
       {
         "Name": "/root/.cache/pip/http/0",
@@ -6597,75 +6209,75 @@
       },
       {
         "Name": "/root/.cache/pip/http/c",
-        "Size": 6185
+        "Size": 6186
       },
       {
         "Name": "/root/.cache/pip/http/c/8",
-        "Size": 6185
+        "Size": 6186
       },
       {
         "Name": "/root/.cache/pip/http/c/8/3",
-        "Size": 6185
+        "Size": 6186
       },
       {
         "Name": "/root/.cache/pip/http/c/8/3/9",
-        "Size": 6185
+        "Size": 6186
       },
       {
         "Name": "/root/.cache/pip/http/c/8/3/9/b",
-        "Size": 6185
+        "Size": 6186
       },
       {
         "Name": "/root/.cache/pip/http/c/8/3/9/b/c839b14831716900da0ee0218182b6005455eb7e1b88b3b37cf8a455",
-        "Size": 6185
+        "Size": 6186
       },
       {
         "Name": "/root/.cache/pip/http/d",
-        "Size": 1323
+        "Size": 1326
       },
       {
         "Name": "/root/.cache/pip/http/d/8",
-        "Size": 1323
+        "Size": 1326
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b",
-        "Size": 1323
+        "Size": 1326
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0",
-        "Size": 1323
+        "Size": 1326
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0/b",
-        "Size": 1323
+        "Size": 1326
       },
       {
         "Name": "/root/.cache/pip/http/d/8/b/0/b/d8b0b8945179eae5bb9abb9826e25b97eab0bd8f1802e8b4aec09387",
-        "Size": 1323
+        "Size": 1326
       },
       {
         "Name": "/root/.cache/pip/http/e",
-        "Size": 42465
+        "Size": 42466
       },
       {
         "Name": "/root/.cache/pip/http/e/2",
-        "Size": 42465
+        "Size": 42466
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f",
-        "Size": 42465
+        "Size": 42466
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0",
-        "Size": 42465
+        "Size": 42466
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0/8",
-        "Size": 42465
+        "Size": 42466
       },
       {
         "Name": "/root/.cache/pip/http/e/2/f/0/8/e2f0834a186adb91203d196c43046032d4765c360aff1cd98806a975",
-        "Size": 42465
+        "Size": 42466
       },
       {
         "Name": "/root/.cache/pip/selfcheck.json",
@@ -7041,7 +6653,7 @@
       },
       {
         "Name": "/usr",
-        "Size": 851733084
+        "Size": 851732872
       },
       {
         "Name": "/usr/bin",
@@ -38961,7 +38573,7 @@
       },
       {
         "Name": "/usr/share",
-        "Size": 312542012
+        "Size": 312541800
       },
       {
         "Name": "/usr/share/X11",
@@ -41349,7 +40961,7 @@
       },
       {
         "Name": "/usr/share/doc",
-        "Size": 3761445
+        "Size": 3761233
       },
       {
         "Name": "/usr/share/doc-base",
@@ -42189,7 +41801,7 @@
       },
       {
         "Name": "/usr/share/doc/libavahi-client3/changelog.Debian.gz",
-        "Size": 2466
+        "Size": 2254
       },
       {
         "Name": "/usr/share/doc/libavahi-client3/copyright",
@@ -42197,11 +41809,11 @@
       },
       {
         "Name": "/usr/share/doc/libavahi-common-data",
-        "Size": 7906
+        "Size": 7694
       },
       {
         "Name": "/usr/share/doc/libavahi-common-data/changelog.Debian.gz",
-        "Size": 2466
+        "Size": 2254
       },
       {
         "Name": "/usr/share/doc/libavahi-common-data/copyright",
@@ -42221,7 +41833,7 @@
       },
       {
         "Name": "/usr/share/doc/libavahi-common3/changelog.Debian.gz",
-        "Size": 2466
+        "Size": 2254
       },
       {
         "Name": "/usr/share/doc/libavahi-common3/copyright",
@@ -139453,7 +139065,7 @@
       },
       {
         "Name": "/var",
-        "Size": 66679301
+        "Size": 66703201
       },
       {
         "Name": "/var/backups",
@@ -139517,11 +139129,11 @@
       },
       {
         "Name": "/var/lib",
-        "Size": 65010147
+        "Size": 65033983
       },
       {
         "Name": "/var/lib/apt",
-        "Size": 41501670
+        "Size": 41525490
       },
       {
         "Name": "/var/lib/apt/extended_states",
@@ -139529,7 +139141,7 @@
       },
       {
         "Name": "/var/lib/apt/lists",
-        "Size": 41484131
+        "Size": 41507951
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_InRelease",
@@ -139545,7 +139157,7 @@
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_main_binary-amd64_Packages.lz4",
-        "Size": 639545
+        "Size": 648152
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_multiverse_binary-amd64_Packages.lz4",
@@ -139553,11 +139165,11 @@
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_binary-amd64_Packages.lz4",
-        "Size": 345659
+        "Size": 358517
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_source_Sources.lz4",
-        "Size": 110663
+        "Size": 113073
       },
       {
         "Name": "/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease",
@@ -139601,7 +139213,7 @@
       },
       {
         "Name": "/var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_main_binary-amd64_Packages.lz4",
-        "Size": 325901
+        "Size": 325844
       },
       {
         "Name": "/var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_multiverse_binary-amd64_Packages.lz4",
@@ -139609,7 +139221,7 @@
       },
       {
         "Name": "/var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_universe_binary-amd64_Packages.lz4",
-        "Size": 108780
+        "Size": 108782
       },
       {
         "Name": "/var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_universe_source_Sources.lz4",
@@ -139629,7 +139241,7 @@
       },
       {
         "Name": "/var/lib/dpkg",
-        "Size": 9522861
+        "Size": 9522873
       },
       {
         "Name": "/var/lib/dpkg/alternatives",
@@ -145329,11 +144941,11 @@
       },
       {
         "Name": "/var/lib/dpkg/status",
-        "Size": 467692
+        "Size": 467698
       },
       {
         "Name": "/var/lib/dpkg/status-old",
-        "Size": 468907
+        "Size": 468913
       },
       {
         "Name": "/var/lib/dpkg/triggers",
@@ -146461,7 +146073,7 @@
       },
       {
         "Name": "/var/lib/texmf",
-        "Size": 13971482
+        "Size": 13971486
       },
       {
         "Name": "/var/lib/texmf/dvipdfmx",
@@ -146613,11 +146225,11 @@
       },
       {
         "Name": "/var/lib/texmf/web2c",
-        "Size": 13164851
+        "Size": 13164855
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex",
-        "Size": 5008453
+        "Size": 5008455
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/dvilualatex.fmt",
@@ -146637,7 +146249,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/lualatex.fmt",
-        "Size": 1349075
+        "Size": 1349076
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/lualatex.log",
@@ -146645,7 +146257,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/luatex.fmt",
-        "Size": 1138941
+        "Size": 1138942
       },
       {
         "Name": "/var/lib/texmf/web2c/luatex/luatex.log",
@@ -146733,11 +146345,11 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex",
-        "Size": 4682470
+        "Size": 4682472
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xelatex.fmt",
-        "Size": 2420967
+        "Size": 2420968
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xelatex.log",
@@ -146745,7 +146357,7 @@
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xetex.fmt",
-        "Size": 2246076
+        "Size": 2246077
       },
       {
         "Name": "/var/lib/texmf/web2c/xetex/xetex.log",
@@ -146825,7 +146437,7 @@
       },
       {
         "Name": "/var/log",
-        "Size": 522075
+        "Size": 522139
       },
       {
         "Name": "/var/log/alternatives.log",
@@ -146833,19 +146445,19 @@
       },
       {
         "Name": "/var/log/apt",
-        "Size": 108414
+        "Size": 108430
       },
       {
         "Name": "/var/log/apt/eipp.log.xz",
-        "Size": 16996
+        "Size": 16988
       },
       {
         "Name": "/var/log/apt/history.log",
-        "Size": 19662
+        "Size": 19668
       },
       {
         "Name": "/var/log/apt/term.log",
-        "Size": 71756
+        "Size": 71774
       },
       {
         "Name": "/var/log/bootstrap.log",
@@ -146857,7 +146469,7 @@
       },
       {
         "Name": "/var/log/dpkg.log",
-        "Size": 332326
+        "Size": 332374
       },
       {
         "Name": "/var/log/faillog",
@@ -146902,7 +146514,7 @@
     ]
   },
   {
-    "Image": "openbases/builder-whedon:ded6989aae",
+    "Image": "openbases/openbases-pdf:0d429e40f3",
     "AnalyzeType": "History",
     "Analysis": [
       "/bin/sh -c #(nop) ADD file:3df374a69ce696c21058366678c1ceb89e11349e52decfd35de0ee3bd8dc1162 in /",
@@ -146913,16 +146525,15 @@
       "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
       "/bin/sh -c #(nop)  LABEL maintainer=@vsoch",
       "/bin/sh -c #(nop)  ENV DEBIAN_FRONTEND=noninteractive",
-      "/bin/sh -c #(nop)  ENV WHEDON_DIR=/opt/whedon",
-      "/bin/sh -c apt update \u0026\u0026     apt install --yes --no-install-recommends        git        biber        build-essential        lmodern        pandoc        pandoc-citeproc        texlive-xetex        texlive        texlive-latex-extra        texlive-bibtex-extra        texlive-fonts-recommended        wget \u0026\u0026     wget -O /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-1-amd64.deb \u0026\u0026     dpkg -i /tmp/pandoc.deb \u0026\u0026     wget https://bootstrap.pypa.io/get-pip.py \u0026\u0026     python get-pip.py \u0026\u0026     git clone https://github.com/openjournals/whedon.git \"${WHEDON_DIR}\" \u0026\u0026     mkdir -p /data /code  \u0026\u0026     pip install --upgrade pip \u0026\u0026     pip install whedon",
-      "/bin/sh -c #(nop) ADD dir:d4f4101149952a55cdf8c0542d2c727f15edca86be59e6171e1ced2db94bdf26 in /code",
+      "/bin/sh -c apt update \u0026\u0026     apt install --yes --no-install-recommends        git        biber        build-essential        lmodern        pandoc        pandoc-citeproc        texlive-xetex        texlive        texlive-latex-extra        texlive-bibtex-extra        texlive-fonts-recommended        wget \u0026\u0026     wget -O /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-1-amd64.deb \u0026\u0026     dpkg -i /tmp/pandoc.deb \u0026\u0026     wget https://bootstrap.pypa.io/get-pip.py \u0026\u0026     python get-pip.py \u0026\u0026     mkdir -p /data /code  \u0026\u0026     pip install --upgrade pip \u0026\u0026     pip install whedon",
+      "/bin/sh -c #(nop) ADD dir:f4f79749162a2f8b1290d07ddfc312bbf9e907dc4df44f033b1478470ac08303 in /code",
       "/bin/sh -c chmod u+x /code/entrypoint.sh",
       "/bin/sh -c #(nop) WORKDIR /data",
       "/bin/sh -c #(nop)  ENTRYPOINT [\"/bin/bash\" \"/code/entrypoint.sh\"]"
     ]
   },
   {
-    "Image": "openbases/builder-whedon:ded6989aae",
+    "Image": "openbases/openbases-pdf:0d429e40f3",
     "AnalyzeType": "Pip",
     "Analysis": [
       {
