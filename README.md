@@ -1,4 +1,4 @@
-# Open Bases Paper Builder Base
+# Open Bases Paper Base
 
 ![docs/robot.png](https://github.com/openbases/whedon-python/raw/master/docs/img/robot.png)
 
@@ -14,5 +14,5 @@ Build the container locally. See [openbases/builder-pdf](https://www.github.com/
 for usage.
 
 ```bash
-docker build -t openbases/builder-whedon .
+docker build -t openbases/openbases-pdf .
 ```
