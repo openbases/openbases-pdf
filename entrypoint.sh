@@ -1,15 +1,12 @@
 #!/bin/bash
 
-WHEDON_DIR=${WHEDON_DIR:-/opt/whedon}
-
-#!/bin/bash
-
 usage () {
 
     echo "Usage:
 
 
          docker run <options> <container> <action> [options] ...
+         docker run -v /data:/data <container> pdf
 
          **All input files should be mounted as volume at /data in container
          
@@ -26,14 +23,37 @@ usage () {
 
          pub:
 
-             --issue: Github issue at joss-reviews of associated review
-             --year: JOSS year for publication
-             --volume: JOSS volume for publication
+             --issue: Github issue of associated review
+             --year: year for publication
+             --volume: volume for publication
 
          Examples:
 
               docker run -v /data:/data <container> pdf --minimal
          "
+}
+
+get_default() {
+
+    # Check if the variable provided by the user is defined. If not,
+    # return default
+
+    CUSTOM_PATH="${1}"
+    CUSTOM_TYPE="${2}"
+    CUSTOM_DEFAULT="${3}"
+
+    if [ -f "${CUSTOM_PATH}" ]; then
+        1>&2 echo "[${CUSTOM_TYPE}] ${CUSTOM_PATH}"
+    else
+        # Second try, look in data
+        if [ -f "/data/${CUSTOM_PATH}" ]; then
+            CUSTOM_PATH="/data/${CUSTOM_PATH}"
+        else
+            1>&2 echo "Warning, cannot find ${CUSTOM_PATH}, using default."
+            CUSTOM_PATH="${CUSTOM_DEFAULT}"
+        fi
+    fi
+    printf $CUSTOM_PATH
 }
 
 if [ $# -eq 0 ]; then
@@ -46,7 +66,8 @@ fi
 PDF_BIB="paper.bib"
 PDF_INFILE="paper.md"
 PDF_OUTFILE="paper.pdf"
-PDF_TEMPLATE="/data/latex.template"
+PDF_LOGO="/data/joss-logo.png"
+PDF_TEMPLATE="/data/latex.template.joss"
 PDF_TYPE="pdf"
 
 while true; do
@@ -63,6 +84,11 @@ while true; do
         --issue|issue)
             shift
             issue="${1:-}"
+            shift
+        ;;
+        --logo|logo)
+            shift
+            PDF_LOGO="${1:-}"
             shift
         ;;
         --name|name)
@@ -106,30 +132,8 @@ done
 
 # Template ---------------------------------------------------------------------
 
-# Default we will use (and give to user) whedon's
-cp ${WHEDON_DIR}/resources/latex.template /data/latex.template
-
-# But the user can provide a custom template
-# If we don't have a template, also copy
-if [ ! -z "$PDF_TEMPLATE" ]; then
-    if [ -f "${PDF_TEMPLATE}" ]; then
-        echo "[custom template] ${PDF_TEMPLATE}"
-    else
-        echo "Warning, cannot find ${PDF_TEMPLATE}, using default."
-    fi
-fi
-
-
-# Logo -------------------------------------------------------------------------
-
-# If we don't have a logo, copy from joss
-
-if [ ! -f "logo.png" ]; then
-    echo "No custom logo.png found, copying whedon's from joss"
-    echo "cp ${WHEDON_DIR}/resources/joss-logo.png logo.png"
-    cp ${WHEDON_DIR}/resources/joss-logo.png logo.png
-fi
-
+PDF_TEMPLATE=$(get_default "${PDF_TEMPLATE}" "template" "/data/latex.template.joss")
+PDF_LOGO=$(get_default "${PDF_LOGO}" "logo" "/data/joss-logo.png")
 
 # Generate ---------------------------------------------------------------------
 
@@ -168,13 +172,13 @@ else
         -V published="${accepted}" \
         -V page="${issue}" \
         -V graphics="true" \
-        -V logo_path="logo.png" \
+        -V logo_path="${PDF_LOGO}" \
         -V geometry:margin=1in \
         --verbose \
         -o "/data/${PDF_OUTFILE}" \
         --pdf-engine=xelatex \
         --filter /usr/bin/pandoc-citeproc ${PDF_INFILE} \
         --from markdown+autolink_bare_uris \
-        --template "latex.template"
+        --template "${PDF_TEMPLATE}"
 
 fi

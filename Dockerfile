@@ -1,9 +1,8 @@
 FROM ubuntu:18.04
-# docker build -t openbases/builder-whedon .
+# docker build -t openbases/openbases-pdf .
 
 LABEL maintainer "@vsoch"
 ENV DEBIAN_FRONTEND noninteractive
-ENV WHEDON_DIR=/opt/whedon
 
 RUN apt update && \
     apt install --yes --no-install-recommends \
@@ -23,7 +22,6 @@ RUN apt update && \
     dpkg -i /tmp/pandoc.deb && \
     wget https://bootstrap.pypa.io/get-pip.py && \
     python get-pip.py && \
-    git clone https://github.com/openjournals/whedon.git "${WHEDON_DIR}" && \
     mkdir -p /data /code  && \
     pip install --upgrade pip && \
     pip install whedon
