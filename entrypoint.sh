@@ -138,7 +138,18 @@ done
 # Template ---------------------------------------------------------------------
 
 PDF_TEMPLATE=$(get_default "${PDF_TEMPLATE}" "template" "/data/latex.template.joss")
-PDF_LOGO=$(get_default "${PDF_LOGO}" "logo" "/data/openbases-logo.png")
+
+if [ -f "${PDF_LOGO}" ]; then
+    echo "Cannot find logo, generating cuteness!"
+    PDF_LOGO=$(ob-icons)
+    wget "${PDF_LOGO}" -O /tmp/$(basename ${PDF_LOGO})
+    PDF_LOGO=/tmp/$(basename ${PDF_LOGO})
+
+    # Fall back to openbases
+    if [ -f "${PDF_LOGO}" ]; then
+        PDF_LOGO="/data/openbases-logo.png"
+    fi
+fi
 
 # Generate ---------------------------------------------------------------------
 
