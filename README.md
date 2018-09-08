@@ -1,6 +1,6 @@
 # Open Bases Paper Base
 
-![docs/robot.png](https://github.com/openbases/whedon-python/raw/master/docs/img/robot.png)
+![docs/img/logo-small.png](https://github.com/openbases/openbases-pdf/raw/master/img/logo-small.png)
 
 > Hi friend! :wave:
 
