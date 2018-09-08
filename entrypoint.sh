@@ -66,9 +66,14 @@ fi
 PDF_BIB="paper.bib"
 PDF_INFILE="paper.md"
 PDF_OUTFILE="paper.pdf"
-PDF_LOGO="/data/joss-logo.png"
+PDF_LOGO="/data/logo.png"
 PDF_TEMPLATE="/data/latex.template.joss"
 PDF_TYPE="pdf"
+
+# Preference to svg
+if [ -f "/data/logo.svg" ]; then
+    PDF_LOGO="/data/logo.svg"
+fi
 
 while true; do
     case ${1:-} in
@@ -133,7 +138,7 @@ done
 # Template ---------------------------------------------------------------------
 
 PDF_TEMPLATE=$(get_default "${PDF_TEMPLATE}" "template" "/data/latex.template.joss")
-PDF_LOGO=$(get_default "${PDF_LOGO}" "logo" "/data/joss-logo.png")
+PDF_LOGO=$(get_default "${PDF_LOGO}" "logo" "/data/openbases-logo.png")
 
 # Generate ---------------------------------------------------------------------
 
