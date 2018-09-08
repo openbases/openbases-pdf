@@ -299,7 +299,9 @@ jobs:
                               echo "Generating manifest for ${DOCKER_MANIFEST}";
                               docker pull "${CONTAINER_NAME}:${tag}";
                               docker inspect "${CONTAINER_NAME}:${tag}" > "${DOCKER_MANIFEST}";
-                              /tmp/bin/container-diff-linux-amd64 analyze "${CONTAINER_NAME}:${tag}" --type=pip --type=file --type=apt --type=history --json > "inspect-${tag}.json";
+                              if [[ ! -f "inspect-${tag}.json" ]]; then
+                                  /tmp/bin/container-diff-linux-amd64 analyze "${CONTAINER_NAME}:${tag}" --type=pip --type=file --type=apt --type=history --json > "inspect-${tag}.json";
+                              fi
                           fi
                           echo "${tag}" >> tags.json
                     done
