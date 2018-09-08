@@ -4,7 +4,9 @@
         "RepoTags": [
             "openbases/openbases-pdf:c85aafb19c"
         ],
-        "RepoDigests": [],
+        "RepoDigests": [
+            "openbases/openbases-pdf@sha256:a999887cc5afdeab355c8ea88eca8a0a21079d156db3a3dc6e5af1a4a0652919"
+        ],
         "Parent": "",
         "Comment": "",
         "Created": "2018-09-08T14:55:04.490525034Z",
