@@ -142,15 +142,15 @@ PDF_TEMPLATE=$(get_default "${PDF_TEMPLATE}" "template" "/data/latex.template.jo
 if [ ! -f "${PDF_LOGO}" ]; then
 
     echo "Cannot find logo, generating cuteness!"
-    PDF_LOGO=$(ob-icons)
-    PDF_LOGO_CUTENESS=/tmp/$(basename ${PDF_LOGO})
-    wget "${PDF_LOGO}" -O ${PDF_LOGO_CUTENESS}
+    OPENBASES_ICON_URL=$(ob-icons)
+    OPENBASES_ICON=/tmp/$(basename ${OPENBASES_ICON_URL})
+    wget "${OPENBASES_ICON_URL}" -O ${OPENBASES_ICON}
 
     # Fall back to openbases logo
-    if [ ! -f "${PDF_LOGO_CUTENESS}" ]; then
+    if [ ! -f "${OPENBASES_ICON}" ]; then
         PDF_LOGO="/data/openbases-logo.png"
     else
-        PDF_LOGO="${PDF_LOGO_CUTENESS}"
+        PDF_LOGO="${OPENBASES_ICON}"
     fi
 fi
 
