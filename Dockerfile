@@ -24,7 +24,7 @@ RUN apt update && \
     python get-pip.py && \
     mkdir -p /data /code  && \
     pip install --upgrade pip && \
-    pip install whedon
+    pip install openbases
 
 ADD . /code
 RUN chmod u+x /code/entrypoint.sh
