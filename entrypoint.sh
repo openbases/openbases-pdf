@@ -67,12 +67,12 @@ PDF_BIB="paper.bib"
 PDF_INFILE="paper.md"
 PDF_OUTFILE="paper.pdf"
 PDF_LOGO="/data/logo.png"
-PDF_TEMPLATE="/data/latex.template.joss"
+PDF_TEMPLATE="/code/paper/latex.template.joss"
 PDF_TYPE="pdf"
 
 # Preference to svg
 if [ -f "/data/logo.svg" ]; then
-    PDF_LOGO="/data/logo.svg"
+    echo "Warning: svg not supported! Please convert to png."
 fi
 
 while true; do
@@ -148,7 +148,7 @@ if [ ! -f "${PDF_LOGO}" ]; then
 
     # Fall back to openbases logo
     if [ ! -f "${OPENBASES_ICON}" ]; then
-        PDF_LOGO="/data/openbases-logo.png"
+        PDF_LOGO="/code/paper/openbases-logo.png"
     else
         PDF_LOGO="${OPENBASES_ICON}"
     fi
