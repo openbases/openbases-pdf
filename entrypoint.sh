@@ -153,13 +153,13 @@ if [ "${PDF_TYPE}" == "minimal" ]; then
     
 else
 
-    authors=$(py-whedon paper get paper.md authors:name)
-    title=$(py-whedon paper get paper.md title)
-    repo=$(py-whedon paper get paper.md repo)
-    archive_doi=$(py-whedon paper get paper.md archive_doi)
-    formatted_doi=$(py-whedon paper get paper.md formatted_doi)
-    paper_url=$(py-whedon paper get paper.md paper_url)
-    review_issue_url=$(py-whedon paper get paper.md review_issue_url)
+    authors=$(ob-paper get paper.md authors:name)
+    title=$(ob-paper get paper.md title)
+    repo=$(ob-paper get paper.md repo)
+    archive_doi=$(ob-paper get paper.md archive_doi)
+    formatted_doi=$(ob-paper get paper.md formatted_doi)
+    paper_url=$(ob-paper get paper.md paper_url)
+    review_issue_url=$(ob-paper get paper.md review_issue_url)
     
     exec /usr/bin/pandoc \
         -V paper_title="${title}" \
