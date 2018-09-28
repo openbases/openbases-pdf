@@ -17,6 +17,7 @@ RUN apt update && \
        texlive-latex-extra \
        texlive-bibtex-extra \
        texlive-fonts-recommended \
+       tree \
        wget && \
     wget -O /tmp/pandoc.deb https://github.com/jgm/pandoc/releases/download/2.1.1/pandoc-2.1.1-1-amd64.deb && \
     dpkg -i /tmp/pandoc.deb && \
