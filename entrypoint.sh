@@ -67,11 +67,11 @@ fi
 
 
 # These should be mounted at /data
-PDF_BIB="/code/paper/paper.bib"
+PDF_BIB="/data/paper.bib"
 PDF_OUTFILE="paper.pdf"
 PDF_LOGO="/data/logo.png"
 PDF_TEMPLATE="/code/paper/latex.template.joss"
-PDF_INFILE="/code/paper/paper.md"
+PDF_INFILE="/data/paper.md"
 PDF_TYPE="pdf"
 
 # Preference to svg
@@ -212,5 +212,7 @@ else
 
 fi
 
+# Fix permissions
+chmod 0777 /data/*
 echo "Files generated:"
 tree /data
