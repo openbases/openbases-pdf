@@ -41,6 +41,7 @@ get_default() {
     CUSTOM_PATH="${1}"
     CUSTOM_TYPE="${2}"
     CUSTOM_DEFAULT="${3}"
+    CUSTOM_BASENAME=$(basename "${CUSTOM_PATH}")
 
     if [ -f "${CUSTOM_PATH}" ]; then
         1>&2 echo "[${CUSTOM_TYPE}] ${CUSTOM_PATH}"
@@ -48,6 +49,9 @@ get_default() {
         # Second try, look in data
         if [ -f "/data/${CUSTOM_PATH}" ]; then
             CUSTOM_PATH="/data/${CUSTOM_PATH}"
+        # Third try, basename in /data
+        elif [ -f "/data/${CUSTOM_BASENAME}" ]; then
+            CUSTOM_PATH="/data/${CUSTOM_BASENAME}"
         else
             1>&2 echo "Warning, cannot find ${CUSTOM_PATH}, using default."
             CUSTOM_PATH="${CUSTOM_DEFAULT}"
@@ -63,11 +67,11 @@ fi
 
 
 # These should be mounted at /data
-PDF_BIB="paper.bib"
-PDF_INFILE="paper.md"
+PDF_BIB="/data/paper.bib"
 PDF_OUTFILE="paper.pdf"
 PDF_LOGO="/data/logo.png"
 PDF_TEMPLATE="/code/paper/latex.template.joss"
+PDF_INFILE="/data/paper.md"
 PDF_TYPE="pdf"
 
 # Preference to svg
@@ -138,6 +142,8 @@ done
 # Template ---------------------------------------------------------------------
 
 PDF_TEMPLATE=$(get_default "${PDF_TEMPLATE}" "template" "/data/latex.template.joss")
+PDF_INFILE=$(get_default "${PDF_INFILE}" "markdown" "/code/paper/paper.md")
+PDF_BIB=$(get_default "${PDF_BIB}" "bibliography" "/code/paper/paper.bib")
 
 if [ ! -f "${PDF_LOGO}" ]; then
 
@@ -159,23 +165,27 @@ fi
 # The output file must go to /data
 PDF_OUTFILE=$(basename "${PDF_OUTFILE}")
 
+# Copy bib and paper to same folder
+cp "${PDF_INFILE}" /data/paper.md
+cp "${PDF_BIB}" /data/paper.bib
+
 if [ "${PDF_TYPE}" == "minimal" ]; then
 
     echo "Producing minimal pdf."
-    echo "pandoc paper.md --filter pandoc-citeproc --bibliography paper.bib -o paper.pdf"
-    pandoc "/data/${PDF_FILE}" --filter pandoc-citeproc --bibliography "/data/${PDF_BIB}" -o "${PDF_OUTFILE}"
+    echo "pandoc ${PDF_INFILE} --filter pandoc-citeproc --bibliography ${PDF_BIB} -o ${PDF_OUTFILE}"
+    pandoc "${PDF_INFILE}" --filter pandoc-citeproc --bibliography "${PDF_BIB}" -o "${PDF_OUTFILE}"
     
 else
 
-    authors=$(ob-paper get paper.md authors:name)
-    title=$(ob-paper get paper.md title)
-    repo=$(ob-paper get paper.md repo)
-    archive_doi=$(ob-paper get paper.md archive_doi)
-    formatted_doi=$(ob-paper get paper.md formatted_doi)
-    paper_url=$(ob-paper get paper.md paper_url)
-    review_issue_url=$(ob-paper get paper.md review_issue_url)
+    authors=$(ob-paper get ${PDF_INFILE} authors:name)
+    title=$(ob-paper get ${PDF_INFILE} title)
+    repo=$(ob-paper get ${PDF_INFILE} repo)
+    archive_doi=$(ob-paper get ${PDF_INFILE} archive_doi)
+    formatted_doi=$(ob-paper get ${PDF_INFILE} formatted_doi)
+    paper_url=$(ob-paper get ${PDF_INFILE} paper_url)
+    review_issue_url=$(ob-paper get ${PDF_INFILE} review_issue_url)
     
-    exec /usr/bin/pandoc \
+    /usr/bin/pandoc \
         -V paper_title="${title}" \
         -V footnote_paper_title="${title}" \
         -V citation_author="${authors}" \
@@ -196,8 +206,13 @@ else
         --verbose \
         -o "/data/${PDF_OUTFILE}" \
         --pdf-engine=xelatex \
-        --filter /usr/bin/pandoc-citeproc ${PDF_INFILE} \
+        --filter /usr/bin/pandoc-citeproc "/data/paper.md" \
         --from markdown+autolink_bare_uris \
         --template "${PDF_TEMPLATE}"
 
 fi
+
+# Fix permissions
+chmod 0777 /data/*
+echo "Files generated:"
+tree /data
